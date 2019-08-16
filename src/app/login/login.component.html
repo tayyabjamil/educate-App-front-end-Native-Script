@@ -1,0 +1,50 @@
+<ScrollView>
+  <GridLayout rows="auto,auto,auto,*" height="100%">
+    <Label text="Choose Account Type" [marginTop]="pageSide" class="primaryColor text-center fontoswald"></Label>
+
+    <GridLayout row="1" columns="*,25,*" [marginTop]="pageSide/2 " [marginBottom]="pageSide/2">
+      <GridLayout class="inactive-border pageSide" verticalAlignment="center" horizontalAlignment="right"
+        [width]="boxSize" [height]="boxSize" (tap)="onAccountSelection('student')"
+        [ngClass]="{'selectedBorder' : (showType === 'student')}">
+        <Label class="fas iconcolor" text="&#xf14a;" *ngIf="showType == 'student'" verticalAlignment="top"
+          horizontalAlignment="right"></Label>
+      </GridLayout>
+      <GridLayout col="2" class="inactive-border pageSide" verticalAlignment="center" horizontalAlignment="left"
+        [width]="boxSize" [height]="boxSize" (tap)="onAccountSelection('teacher')"
+        [ngClass]="{'selectedBorder' : (showType === 'teacher')}">
+        <Label class="fas iconcolor" text="&#xf14a;" *ngIf="showType == 'teacher'" verticalAlignment="top"
+          horizontalAlignment="right"></Label>
+      </GridLayout>
+    </GridLayout>
+    <StackLayout row="2" class="text-center">
+      <Label [text]="(showType === 'student') ? 'Lets Learn!': 'Lets Teach!'" class="fontoswald"></Label>
+      <Label text="Please fill  out the form below to get started"  class="primaryColor Roboto"></Label>
+    </StackLayout>
+
+    <GridLayout row="3" rows="*,auto" columns="*,auto">
+      <StackLayout row="0" colSpan="2" >
+        <ns-textField rtext="Email" [rformgroup]="rform" rcontrolname="email"></ns-textField>
+        <ns-textField rtext="Password" [rformgroup]="rform" rcontrolname="pass"></ns-textField>
+        <StackLayout *ngIf="!isLoggingIn">
+          <ns-textField rtext="Confirm Password" [rformgroup]="rform" rcontrolname="confirmpass"></ns-textField>
+        </StackLayout>
+      </StackLayout>
+
+      <Label row="1" verticalAlignment='center' (tap)="toggleForm()" [marginBottom]="pageSide "
+        [marginTop]="pageSide/2" [marginLeft]="pageSide">
+        <FormattedString>
+          <Span text='No account? ' class='mutedColor fontoswald'></Span>
+          <Span text='Signup' class='primaryColor fontoswald'></Span>
+        </FormattedString>
+      </Label>
+  
+
+      <StackLayout row="1" col="1" >
+      <ns-button (onTap)="signup()"   [text]="(showType === 'student') ? 'Signin Student!': 'Signin Teacher!'" 
+        [marginRight]="pageSide" [marginBottom]="pageSide" ></ns-button>
+
+      </StackLayout>
+    
+    </GridLayout>
+  </GridLayout>
+</ScrollView>

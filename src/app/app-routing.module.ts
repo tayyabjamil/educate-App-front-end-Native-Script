@@ -1,0 +1,20 @@
+import { NgModule } from "@angular/core";
+import { NativeScriptRouterModule } from "nativescript-angular/router";
+import { Routes } from "@angular/router";
+
+const routes: Routes = [
+    { path: "", redirectTo: "/login", pathMatch: "full" },
+    { path: "login", loadChildren: "./login/login.module#LoginModule" }, // lazy loaded module
+    { path: "onBoardingForm", loadChildren: "./login/login.module#LoginModule" },
+    { path: "onBoardingFormteacher", loadChildren: "./login/login.module#LoginModule" },
+
+    // { path:"login/teacher",component:TeacherdataComponent},
+    // { path:"login/student",component:StudentdataComponent},
+
+];
+
+@NgModule({
+    imports: [NativeScriptRouterModule.forRoot(routes)],
+    exports: [NativeScriptRouterModule]
+})
+export class AppRoutingModule { }

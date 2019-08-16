@@ -1,0 +1,54 @@
+.grid1{
+    background-color: #1976d2;
+}
+.grid2{
+background-color: #e6e6e6
+}
+.btn{
+    background-color: #1976d2;
+}
+
+.inactive-border {
+    border-width: 1dp;
+    border-color: #e8e9eb;
+}
+
+.boxSize {
+    background-color: white;
+}
+
+.selectedBorder {
+    border-width: 1dp;
+    border-color: #31b4ef;
+}
+
+.selected {
+    background-color: red;
+    color: white;
+}
+
+.f-600 {
+    font-weight: 600;
+}
+
+.f-16 {
+    font-size: 16;
+    font-family: 'Oswald','Oswald-Regular','Oswald-Bold';
+}
+
+.primaryColor{ 
+    color: #31b4ef;
+}
+.iconcolor{
+    color: #1976d2;
+    font-size: 22;
+}
+.fas {
+    font-family: 'Font Awesome 5 Free', fa-solid-900;
+    font-style: normal;
+    font-weight: 900;
+  }
+
+  .fontPacifico{
+    font-family: 'Pacifico';
+}

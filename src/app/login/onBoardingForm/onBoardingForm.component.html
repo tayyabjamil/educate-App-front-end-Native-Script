@@ -1,0 +1,54 @@
+<GridLayout rows="auto,*,auto">
+  <GridLayout>
+    <Label [text]="formTitle" class="text-center Oswald primaryColor m-t-15 m-b-15"></Label>
+  </GridLayout>
+
+  <Pager row="1" (selectedIndexChange)="onIndexChanged($event)" [items]="onBoarding" #pager
+    [itemTemplateSelector]="templateSelector" class="pager">
+
+    <ng-template pagerTemplateKey="personalInfo" let-i="index" let-item="item">
+
+      <GridLayout class="pager-item" rows="auto,*" columns="*">
+
+        <StackLayout row="1" [marginTop]="boxSize/2">
+          <ns-textField label="Firstname" rtext="Enter your data" [rformgroup]="onBardingForm" rcontrolname="Firstname">
+          </ns-textField>
+          <ns-textField label="Lastname" rtext="Enter your data" [rformgroup]="onBardingForm" rcontrolname="Lastname">
+          </ns-textField>
+          <ns-textField label="Adress" rtext="Enter your data" [rformgroup]="onBardingForm" rcontrolname="Adress">
+          </ns-textField>
+          <ns-textField label="Contact" rtext="Enter your data" [rformgroup]="onBardingForm" rcontrolname="Contact">
+          </ns-textField>
+
+        </StackLayout>
+      </GridLayout>
+    </ng-template>
+
+    <ng-template pagerTemplateKey="contactInfo" let-i="index" let-item="item">
+      <GridLayout class="pager-item" rows="auto,*" columns="*">
+
+        <StackLayout row="1" [marginTop]="boxSize/2">
+          <ns-textField label="University" rtext="Enter your data" [rformgroup]="onBardingForm"
+            rcontrolname="University"></ns-textField>
+          <ns-textField label="Department" rtext="Enter your data" [rformgroup]="onBardingForm"
+            rcontrolname="Department"></ns-textField>
+          <ns-textField label="Semester" rtext="Enter your data" [rformgroup]="onBardingForm" rcontrolname="Semester">
+          </ns-textField>
+
+        </StackLayout>
+      </GridLayout>
+    </ng-template>
+
+    <ng-template pagerTemplateKey="imageInfo" let-i="index" let-item="item">
+      <GridLayout rows="*, auto" columns="*" [marginLeft]="pageSide" [marginRight]="pageSide">
+        <!-- <GridLayout (tap)="onSelectSingleTap()" class="imagePicker"  [width]="previewSize" [height]="previewSize">
+          <Image [src]="imageSrc" *ngIf="imageSrc" borderRadius="500"  [width]="previewSize" [height]="previewSize" stretch="aspectFit">
+          </Image>
+        </GridLayout> -->
+      </GridLayout>
+    </ng-template>
+  </Pager>
+  <GridLayout row="2" class="m-t-10 m-b-20">
+    <ns-button row="1" col="1" [marginLeft]="pageSide" [marginRight]="pageSide" text="Next"></ns-button>
+  </GridLayout>
+</GridLayout>
