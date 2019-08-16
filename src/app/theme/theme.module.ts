@@ -6,6 +6,7 @@ import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PageService } from './services/page.service';
 import { TextFieldComponent } from './component/textField/textField.component';
+import { ImageUploadComponent } from './component/image-upload/image-upload.component';
 
 @NgModule({
   imports: [
@@ -13,8 +14,8 @@ import { TextFieldComponent } from './component/textField/textField.component';
     NativeScriptFormsModule,
     ReactiveFormsModule
   ],
-  declarations: [ButtonComponent, TextFieldComponent],
-  exports: [ButtonComponent, TextFieldComponent],
+  declarations: [ButtonComponent, TextFieldComponent, ImageUploadComponent],
+  exports: [ButtonComponent, TextFieldComponent, ImageUploadComponent],
   providers: [PageService]
 })
 export class ThemeModule { }

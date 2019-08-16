@@ -41,10 +41,7 @@
 
     <ng-template pagerTemplateKey="imageInfo" let-i="index" let-item="item">
       <GridLayout rows="*, auto" columns="*" [marginLeft]="pageSide" [marginRight]="pageSide">
-        <!-- <GridLayout (tap)="onSelectSingleTap()" class="imagePicker"  [width]="previewSize" [height]="previewSize">
-          <Image [src]="imageSrc" *ngIf="imageSrc" borderRadius="500"  [width]="previewSize" [height]="previewSize" stretch="aspectFit">
-          </Image>
-        </GridLayout> -->
+        <ns-image-upload (selectedImage)="onSelectedImage($event)"></ns-image-upload>
       </GridLayout>
     </ng-template>
   </Pager>

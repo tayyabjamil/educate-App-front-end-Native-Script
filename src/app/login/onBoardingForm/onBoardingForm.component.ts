@@ -2,7 +2,6 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Page } from 'tns-core-modules/ui/page/page';
 
- import * as imagepicker from "nativescript-imagepicker";
 
 import * as platformModule from 'tns-core-modules/platform';
 import { PageService } from '~/app/theme/services/page.service';
@@ -21,8 +20,6 @@ export class OnBoardingFormComponent implements OnInit {
     boxSize;
     title;
     latestReceivedIndex = 0;
-    imageSrc: any;
-    previewSize: number;
 
     @ViewChild('pager', { static: true }) pager: ElementRef;
 
@@ -34,7 +31,6 @@ export class OnBoardingFormComponent implements OnInit {
         this.page.actionBarHidden = true;
         const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
         this.boxSize = deviceWidth * 0.35;
-        this.previewSize = deviceWidth * 0.40;
 
         this.pageSide = this.pageService.pageSidePadding();
         this.onBardingForm = this.formBuilder.group({
@@ -74,7 +70,7 @@ export class OnBoardingFormComponent implements OnInit {
     get formTitle() {
         return this.onBoarding[this.latestReceivedIndex].title;
     }
-  
+
     onSubmit() {
         debugger;
         console.log(this.onBardingForm.value);
@@ -96,31 +92,9 @@ export class OnBoardingFormComponent implements OnInit {
                 break;
         }
     }
-   
 
-    public onSelectSingleTap() {
-
-        let context = imagepicker.create({
-            mode: "single"
-        });
-        this.startSelection(context);
-    }
-
-    private startSelection(context) {
-        let that = this;
-
-        context
-        .authorize()
-        .then(() => {
-            that.imageSrc = null;
-            return context.present();
-        })
-        .then((selection) => {
-            console.log("Selection done: " + JSON.stringify(selection));
-            that.imageSrc = selection.length > 0 ? selection[0] : null;
-        }).catch(function (e) {
-            console.log(e);
-        });
+    onSelectedImage(img) {
+        alert('image is selected');
     }
 }
 
