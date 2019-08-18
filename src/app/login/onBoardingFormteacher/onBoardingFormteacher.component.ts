@@ -16,7 +16,11 @@ export class OnBoardingFormteacherComponent implements OnInit {
   @ViewChild('pager', { static: true }) pager: ElementRef;
   pageSide;
   boxSize;
-
+  currentPagerIndex = 0;
+  
+  onBoardingForm;
+  
+  latestReceivedIndex = 0
   constructor(private page: Page, private formBuilder: FormBuilder, private pageservice: PageService) {
     this.page.actionBarHidden = true;
   }
@@ -36,9 +40,6 @@ export class OnBoardingFormteacherComponent implements OnInit {
     },
   ];
 
-  onBoardingForm;
-  currentPagerIndex = 0;
-  latestReceivedIndex = 0
   ngOnInit() {
     const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
     this.page.actionBarHidden = true;
@@ -63,11 +64,10 @@ export class OnBoardingFormteacherComponent implements OnInit {
     this.currentPagerIndex = $event.value;
   }
 
-  // get formtitle() {
-  //   if (this.onBoardingitems[this.currentPagerIndex].title) {
-  //     return this.onBoardingitems[this.currentPagerIndex].title;
-  //   }
-  // }
+  get formtitle() {
+    
+      return this.onBoardingitems[this.currentPagerIndex].title;
+    }
 
   public templateSelector = (item: any) => {
     switch (item.key) {
@@ -90,15 +90,4 @@ export class OnBoardingFormteacherComponent implements OnInit {
     this.pageSide = this.pageservice.pageSidePadding();
   }
 
-  // prevPage() {
-  //   const newIndex = Math.max(0, this.currentPagerIndex - 1);
-  //   this.currentPagerIndex = newIndex;
-  //   this.latestRecievedIndex = newIndex;
-  // }
-
-  nextPage() {
-    const newIndex = Math.min(this.onBoardingitems.length - 1, this.currentPagerIndex + 1);
-    this.currentPagerIndex = newIndex;
-    this.latestReceivedIndex = newIndex;
-  }
 }

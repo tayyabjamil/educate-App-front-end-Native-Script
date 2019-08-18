@@ -19,9 +19,11 @@ export class OnBoardingFormComponent implements OnInit {
     pageSide;
     boxSize;
     title;
+    currentPagerIndex: 0;
     latestReceivedIndex = 0;
 
     @ViewChild('pager', { static: true }) pager: ElementRef;
+   
 
     constructor(private page: Page, private formBuilder: FormBuilder, private pageService: PageService) {
 
@@ -67,9 +69,11 @@ export class OnBoardingFormComponent implements OnInit {
         this.latestReceivedIndex = $event.value;
     }
 
-    get formTitle() {
-        return this.onBoarding[this.latestReceivedIndex].title;
-    }
+    get formtitle() {
+        if (this.onBoarding[this.currentPagerIndex].title) {
+            return this.onBoarding[this.currentPagerIndex].title;
+          }
+        }
 
     onSubmit() {
         debugger;

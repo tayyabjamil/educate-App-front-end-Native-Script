@@ -1,13 +1,14 @@
-<GridLayout rows="auto,*,auto" columns="">
-  <Label row="0" text="formtitle" class="text-center Oswald primaryColor m-t-15 m-b-15"></Label>
+<GridLayout rows="auto,*,auto" columns="" style="background-color: #31b4ef">
+  <Label row="0" text="formtitle" class="text-center Oswald primaryColor m-t-15 m-b-15" color="white"></Label>
 
-  <Pager row="1" [selectedIndex]="latestRecievedIndex" (selectedIndexChange)="onIndexChanged($event)" [items]="onBoardingitems"
-    [itemTemplateSelector]="templateSelector" disableAnimation="false">
+  <Pager row="1" [selectedIndex]="latestRecievedIndex" (selectedIndexChange)="onIndexChanged($event)"
+    [items]="onBoardingitems" [itemTemplateSelector]="templateSelector" disableAnimation="false">
 
     <ng-template pagerTemplateKey="Personalinfo" let-i="index" let-item="item">
-      <GridLayout rows="*" columns="*">
+      <GridLayout rows="auto" columns="*">
 
-        <StackLayout row="0" [marginTop]="boxSize/2">
+        <StackLayout row="0" [marginTop]="boxSize/2" style="background-color: whitesmoke;padding: 5%"
+          [marginRight]="pageSide" [marginLeft]="pageSide">
 
           <ns-textField label="Firstname" rtext="Enter your data" [rformgroup]="onBoardingForm"
             rcontrolname="Firstname"></ns-textField>
@@ -24,10 +25,11 @@
     </ng-template>
 
     <ng-template pagerTemplateKey="Acadmics" let-i="index" let-item="item">
-      <GridLayout rows="*" columns="*">
+      <GridLayout rows="auto" columns="*">
 
-        <StackLayout row="0" [marginTop]="boxSize/2">
-          <ns-textField label="University" rtext="Enter your datat" [rformgroup]="onBoardingForm"
+        <StackLayout row="0" [marginTop]="boxSize/2" style="background-color: whitesmoke;padding: 5%"
+          [marginRight]="pageSide" [marginLeft]="pageSide">
+          <ns-textField label="University" rtext="Enter your data" [rformgroup]="onBoardingForm"
             rcontrolname="University"></ns-textField>
           <ns-textField label="Department" rtext="Enter your data" [rformgroup]="onBoardingForm"
             rcontrolname="Department"></ns-textField>
@@ -41,18 +43,19 @@
     </ng-template>
 
     <ng-template pagerTemplateKey="image" let-i="index" let-item="item">
-      <GridLayout rows="*" columns="*">
+      <GridLayout rows="auto,auto" columns="*"  [marginRight]="pageSide"
+        [marginLeft]="pageSide" [marginTop]="boxSize/2">
         <ns-image-upload></ns-image-upload>
+        <Label row="1" text="Tap to Select your image" class="text-center Oswald whitesmoke m-t-15 m-b-15 "></Label>
+
       </GridLayout>
     </ng-template>
   </Pager>
-  <StackLayout row="2" class="m-t-20 m-b-20">
-      
-  <ns-button  text="Next" (onTap)="nextPage()"  [marginLeft]="pageSide" [marginRight]="pageSide"></ns-button>
-  <!-- <DockLayout  orientation="horizontal" stretchLastChild="true" class="bg-primary">
-    <Button dock="lzeft" text="Prev" (tap)="prevPage()" class="btn btn-primary"></Button>
-    <Button dock="right" text="Next" (tap)="nextPage()" class="btn btn-primary"></Button>
-  </DockLayout> -->
-</StackLayout>
-  
+  <StackLayout row="2" [nsRouterLink]="['/dashboardteacher']" class="m-t-20 m-b-20" style="background-color: whitesmoke;  color: #31b4ef; " [marginLeft]="pageSide"
+    [marginRight]="pageSide">
+
+    <ns-button text="Next" (onTap)="nextPage()"></ns-button>
+
+  </StackLayout>
+
 </GridLayout>

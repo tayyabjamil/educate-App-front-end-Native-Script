@@ -20,11 +20,11 @@ import { ThemeModule } from "./theme/theme.module";
       NativeScriptModule,
       AppRoutingModule,
       ThemeModule,
-      LoginModule 
+      LoginModule
    ],
    declarations: [
       AppComponent,
-    ],
+   ],
    providers: [],
    schemas: [
       NO_ERRORS_SCHEMA

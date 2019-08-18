@@ -19,7 +19,7 @@ background-color: #e6e6e6
 
 .selectedBorder {
     border-width: 1dp;
-    border-color: #31b4ef;
+    border-color: whitesmoke;
 }
 
 .selected {
@@ -40,7 +40,7 @@ background-color: #e6e6e6
     color: #31b4ef;
 }
 .iconcolor{
-    color: #1976d2;
+    color: whitesmoke;
     font-size: 22;
 }
 .fas {

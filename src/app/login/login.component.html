@@ -1,28 +1,40 @@
 <ScrollView>
-  <GridLayout rows="auto,auto,auto,*" height="100%">
-    <Label text="Choose Account Type" [marginTop]="pageSide" class="primaryColor text-center fontoswald"></Label>
+  <GridLayout rows="auto,auto,auto,*"  height="100%">
+    <GridLayout row="0" rows="auto,auto,auto" columns="*,*" colSpan="2" style="background-color: #31b4ef">
+        
+            
+        
+    <Label text="Choose Account Type" colSpan="2" [marginTop]="pageSide/2" color="white" class=" text-center fontoswald"></Label>
 
-    <GridLayout row="1" columns="*,25,*" [marginTop]="pageSide/2 " [marginBottom]="pageSide/2">
+    <GridLayout row="1" colspan="2" columns="*,25,*" [marginTop]="pageSide/2 " >
       <GridLayout class="inactive-border pageSide" verticalAlignment="center" horizontalAlignment="right"
         [width]="boxSize" [height]="boxSize" (tap)="onAccountSelection('student')"
         [ngClass]="{'selectedBorder' : (showType === 'student')}">
         <Label class="fas iconcolor" text="&#xf14a;" *ngIf="showType == 'student'" verticalAlignment="top"
           horizontalAlignment="right"></Label>
-      </GridLayout>
-      <GridLayout col="2" class="inactive-border pageSide" verticalAlignment="center" horizontalAlignment="left"
+      
+        </GridLayout>
+     
+        <GridLayout col="2" class="inactive-border pageSide" verticalAlignment="center" horizontalAlignment="left"
         [width]="boxSize" [height]="boxSize" (tap)="onAccountSelection('teacher')"
         [ngClass]="{'selectedBorder' : (showType === 'teacher')}">
         <Label class="fas iconcolor" text="&#xf14a;" *ngIf="showType == 'teacher'" verticalAlignment="top"
           horizontalAlignment="right"></Label>
       </GridLayout>
     </GridLayout>
-    <StackLayout row="2" class="text-center">
-      <Label [text]="(showType === 'student') ? 'Lets Learn!': 'Lets Teach!'" class="fontoswald"></Label>
+   
+    
+  
+    <Label text="Student" row="2" col="0" class=" fontoswald" color="white" horizontalAlignment="center"></Label>
+    <Label text="Teacher" row="2" col="1" class=" fontoswald" color="white" horizontalAlignment="center"></Label>
+  </GridLayout>
+    <StackLayout row="2" colSpan="2" class="text-center">
+      <Label [text]="(showType === 'student') ? 'Lets Learn!': 'Lets Teach!'" class="fontoswald" [marginBottom]="pageSide/2"></Label>
       <Label text="Please fill  out the form below to get started"  class="primaryColor Roboto"></Label>
     </StackLayout>
 
-    <GridLayout row="3" rows="*,auto" columns="*,auto">
-      <StackLayout row="0" colSpan="2" >
+    <GridLayout row="3" colSpan="2" rows="*,auto" columns="*,auto">
+      <StackLayout row="0" colSpan="2" [marginRight]="pageSide" [marginLeft]="pageSide">
         <ns-textField rtext="Email" [rformgroup]="rform" rcontrolname="email"></ns-textField>
         <ns-textField rtext="Password" [rformgroup]="rform" rcontrolname="pass"></ns-textField>
         <StackLayout *ngIf="!isLoggingIn">
@@ -39,9 +51,9 @@
       </Label>
   
 
-      <StackLayout row="1" col="1" >
-      <ns-button (onTap)="signup()"   [text]="(showType === 'student') ? 'Signin Student!': 'Signin Teacher!'" 
-        [marginRight]="pageSide" [marginBottom]="pageSide" ></ns-button>
+      <StackLayout row="1" col="1" style="background-color:   #31b4ef;"  [marginRight]="pageSide" [marginBottom]="pageSide" >
+      <ns-button (onTap)="signup()" color="white"  [text]="(showType === 'student') ? 'Signin Student!': 'Signin Teacher!'" 
+       ></ns-button>
 
       </StackLayout>
     
