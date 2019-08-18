@@ -5,17 +5,11 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { LoginComponent } from "./login.component";
 import { OnBoardingFormComponent } from "./onBoardingForm/onBoardingForm.component";
 import { OnBoardingFormteacherComponent } from "./onBoardingFormteacher/onBoardingFormteacher.component";
-import { DashboardstudentComponent } from "./dashboardstudent/dashboardstudent.component";
-import { DashboardteacherComponent } from "./dashboardteacher/dashboardteacher.component";
 
 export const routes: Routes = [
     {path: "", component:LoginComponent },
     {path:"onBoardingForm",component:OnBoardingFormComponent},
     {path:"onBoardingFormteacher",component:OnBoardingFormteacherComponent},
-    {path:"dashboardstudent",component:DashboardstudentComponent},
-    {path:"dashboardteacher",component:DashboardteacherComponent},
-    
-    
 ];
 
 @NgModule({
