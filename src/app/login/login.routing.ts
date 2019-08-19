@@ -6,6 +6,7 @@ import { LoginComponent } from "./login.component";
 import { OnBoardingFormComponent } from "./onBoardingForm/onBoardingForm.component";
 import { OnBoardingFormteacherComponent } from "./onBoardingFormteacher/onBoardingFormteacher.component";
 
+
 export const routes: Routes = [
     {path: "", component:LoginComponent },
     {path:"onBoardingForm",component:OnBoardingFormComponent},

@@ -10,7 +10,7 @@ background-color: #e6e6e6
 
 .inactive-border {
     border-width: 1dp;
-    border-color: #e8e9eb;
+    border-color: white;
 }
 
 .boxSize {
@@ -19,11 +19,11 @@ background-color: #e6e6e6
 
 .selectedBorder {
     border-width: 1dp;
-    border-color: whitesmoke;
+   border-color: #1976d2;
 }
 
 .selected {
-    background-color: red;
+
     color: white;
 }
 
@@ -39,8 +39,8 @@ background-color: #e6e6e6
 .primaryColor{ 
     color: #31b4ef;
 }
-.iconcolor{
-    color: whitesmoke;
+.icon{
+    
     font-size: 22;
 }
 .fas {

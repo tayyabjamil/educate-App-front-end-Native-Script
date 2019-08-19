@@ -1,9 +1,9 @@
 <GridLayout rows="*,auto">
-    <page-router-outlet></page-router-outlet>
-    <GridLayout row="1" rows="auto" columns="*,*,*,*" class="tabs">
-      <Label padding="20" [nsRouterLink]="['/home']"    text="tab 1" col="0"></Label>
-      <Label padding="20" [nsRouterLink]="['/home/messages']"   text="tab 2" col="1"></Label>
-      <Label padding="20" [nsRouterLink]="['/home/courses']"   text="tab 3" col="2"></Label>
-      <Label padding="20" [nsRouterLink]="['/home/profile']"   text="tab 4" col="3"></Label>
-    </GridLayout>
+  <page-router-outlet></page-router-outlet>
+  <GridLayout row="1" rows="auto" columns="*,*,*,*" class="tabs" style="background-color: #31b4ef ">
+    <Label padding="20" [nsRouterLink]="['/home/profile']" style="color: whitesmoke" text="profile" col="0"></Label>
+    <Label padding="20" [nsRouterLink]="['/home//Quries']" style="color: whitesmoke" text="Quries" col="1"></Label>
+    <Label padding="20" [nsRouterLink]="['/home/messages']" style="color: whitesmoke" text="messages" col="2"></Label>
+    <Label padding="20" [nsRouterLink]="['/home/courses']" style="color: whitesmoke" text="courses" col="3"></Label>
   </GridLayout>
+</GridLayout>

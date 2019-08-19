@@ -9,7 +9,7 @@ import { PageService } from '~/app/theme/services/page.service';
 @Component({
     selector: 'ns-onBoardingForm',
     templateUrl: './onBoardingForm.component.html',
-    styleUrls: ['./onBoardingForm.component.css']
+    styleUrls: ['./onBoardingForm.component.scss']
 })
 
 export class OnBoardingFormComponent implements OnInit {

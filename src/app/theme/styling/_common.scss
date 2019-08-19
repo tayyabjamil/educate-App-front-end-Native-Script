@@ -1,0 +1,32 @@
+@import 'variables';
+
+
+.primaryColor {
+    color: $primary-color;
+}
+.pagebg {
+    background-color: $pageBg;
+}
+
+.textfieldBorderColor {
+    border-color: $primary-color;
+    border-width: 1
+}
+
+.colorWhite {
+    color: rgb(241, 241, 241);
+}
+
+.bgWhite {
+    background-color: white;
+}
+
+.border-r-5 {
+    border-radius: 5%;
+}
+.buttonbg{
+    background-color: $buttonbg;
+}
+.secondrycolor{
+    color:$secondary-color;
+}

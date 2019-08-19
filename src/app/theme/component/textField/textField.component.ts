@@ -6,7 +6,7 @@ import { PageService } from '../../services/page.service';
 @Component({
   selector: 'ns-textField',
   templateUrl: './textField.component.html',
-  styleUrls: ['./textField.component.css'],
+  styleUrls: ['./textField.component.scss'],
   moduleId:module.id
 })
 export class TextFieldComponent implements OnInit {

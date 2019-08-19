@@ -10,6 +10,8 @@ of writing your own CSS rules. For a full list of class names in the theme
 refer to http://docs.nativescript.org/ui/theme.
 */
 @import '~nativescript-theme-core/css/core.light.css';
+@import './app//theme/styling/_common.scss';
+@import './app/theme/styling/_variables.scss';
 
 .mutedColor {
     color: #979797;

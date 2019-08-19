@@ -7,12 +7,14 @@ import { OnBoardingFormComponent } from './onBoardingForm/onBoardingForm.compone
 import { OnBoardingFormteacherComponent } from './onBoardingFormteacher/onBoardingFormteacher.component';
 import { ThemeModule } from '../theme/theme.module';
 
+
 @NgModule({
   imports: [
     NativeScriptCommonModule,
     LoginRoutingModule,
     ThemeModule,
     PagerModule,
+   
    ],
   declarations: [
     LoginComponent, 

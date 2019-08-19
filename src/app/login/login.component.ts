@@ -8,7 +8,7 @@ import { RouterExtensions } from 'nativescript-angular/router';
 @Component({
   selector: 'ns-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
 

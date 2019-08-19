@@ -1,4 +1,28 @@
-<GridLayout rows="" columns="">
-    <Label text="profile" textWrap="true"></Label>
-    
+<GridLayout rows="auto,auto,auto,auto,auto,auto" columns="" style="background-color:#e2e2e2">
+
+    <StackLayout row="0" [marginTop]="pageSide/2" [height]="previewSize" [width]="previewSize"
+        style="border-radius: 60%;background-color:#1c95ce ">
+
+    </StackLayout>
+    <Label row="1" text="Name" class="h3" style="color: #1c95ce" horizontalAlignment="center"></Label>
+    <Label row="2" text="General" class="fontoswald primaryColor" style="padding: 10%"></Label>
+
+    <StackLayout row="3" [marginTop]="pageSide/4" [marginRight]="pageSide/2" [marginLeft]="pageSide/2"
+        style="background-color: whitesmoke;padding: 5%">
+        <Label text="Name" class="Roboto primaryColor"></Label>
+        <Label text="Email" class="Roboto primaryColor"></Label>
+        <Label text="Adress" class="Roboto primaryColor"></Label>
+        <Label text="Phone no" class="Roboto primaryColor"></Label>
+
+    </StackLayout>
+    <Label row="4" text="Acadmics" class="fontoswald primaryColor" style="padding: 10%"></Label>
+
+    <StackLayout row="5" [marginTop]="pageSide/4" [marginRight]="pageSide/2" [marginLeft]="pageSide/2"
+        style="background-color: whitesmoke;padding: 10%">
+        <Label text="University" class="Roboto primaryColor"></Label>
+        <Label text="Batch" class="Roboto primaryColor"></Label>
+        <Label text="Department" class="Roboto primaryColor"></Label>
+        <Label text="Semester" class="Roboto primaryColor"></Label>
+
+    </StackLayout>
 </GridLayout>
