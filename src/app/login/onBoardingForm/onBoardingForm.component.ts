@@ -23,7 +23,7 @@ export class OnBoardingFormComponent implements OnInit {
     latestReceivedIndex = 0;
 
     @ViewChild('pager', { static: true }) pager: ElementRef;
-   
+
 
     constructor(private page: Page, private formBuilder: FormBuilder, private pageService: PageService) {
 
@@ -72,8 +72,8 @@ export class OnBoardingFormComponent implements OnInit {
     get formtitle() {
         if (this.onBoarding[this.currentPagerIndex].title) {
             return this.onBoarding[this.currentPagerIndex].title;
-          }
         }
+    }
 
     onSubmit() {
         debugger;

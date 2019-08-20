@@ -3,7 +3,7 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { Routes } from "@angular/router";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/login", pathMatch: "full" },
+    { path: "", redirectTo: "/home", pathMatch: "full" },
     { path: "login", loadChildren: "./login/login.module#LoginModule" }, // lazy loaded module
     { path: "onBoardingForm", loadChildren: "./login/login.module#LoginModule" },
     { path: "onBoardingFormteacher", loadChildren: "./login/login.module#LoginModule" },
