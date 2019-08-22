@@ -13,31 +13,3 @@ refer to http://docs.nativescript.org/ui/theme.
 @import './app//theme/styling/_common.scss';
 @import './app/theme/styling/_variables.scss';
 
-.mutedColor {
-    color: #979797;
-}
-.fas {
-    font-family: Font Awesome 5 Free, fa-solid-900;
-    font-weight: 900; 
-}
-.fontoswald{
-    font-family: 'Oswald','Oswald-Regular','Oswald-Bold';
-    font-weight: 900;
-}
-.fontostrich{
-    font-family: "ostrich-regular";
-    font-weight: 900;
-
-}
-.fontPacifico{
-    font-family: 'Pacifico';
-}
-.primaryColor{ 
-    color: #31b4ef;
-}
-.Oswald {
-    font-family: 'Oswald-Regular';
-}
-.Roboto{
-    font-family: 'Roboto';
-}

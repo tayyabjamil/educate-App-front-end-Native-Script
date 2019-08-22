@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { Page } from 'tns-core-modules/ui/page/page';
 import * as platformModule from 'tns-core-modules/platform';
 import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
@@ -13,6 +13,7 @@ import { RouterExtensions } from 'nativescript-angular/router';
 export class LoginComponent implements OnInit {
 
   @ViewChild('scrollView', { static: true }) scrollView: ElementRef;
+  @Output() public childEvent = new EventEmitter();
 
   boxSize;
   userType;
@@ -38,7 +39,9 @@ export class LoginComponent implements OnInit {
       confirmpass: new FormControl('', [Validators.required, Validators.minLength(11)])
     });
   }
-
+firstEvent(){
+  this.childEvent.emit('Data from login');
+}
   onAccountSelection(user) {
     this.userType = user
   }

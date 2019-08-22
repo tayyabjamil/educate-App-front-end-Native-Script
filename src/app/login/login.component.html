@@ -34,9 +34,10 @@
     <GridLayout row="3" colSpan="2" rows="*,auto" columns="*,auto">
       <StackLayout row="0" colSpan="2" [marginRight]="pageSide" [marginLeft]="pageSide">
         <ns-textField rtext="Email" [rformgroup]="rform" rcontrolname="email" class="textfield"></ns-textField>
-        <ns-textField rtext="Password" [rformgroup]="rform" rcontrolname="pass"></ns-textField>
+        <ns-textField rtext="Password" [rformgroup]="rform" rcontrolname="pass" secure="false"></ns-textField>
         <StackLayout *ngIf="!isLoggingIn">
-          <ns-textField rtext="Confirm Password" [rformgroup]="rform" rcontrolname="confirmpass"></ns-textField>
+          <ns-textField rtext="Confirm Password" [rformgroup]="rform" rcontrolname="confirmpass" secure="false">
+          </ns-textField>
         </StackLayout>
       </StackLayout>
 

@@ -11,6 +11,7 @@ import { AppComponent } from "./app.component";
 // import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { LoginModule } from "./login/login.module";
 import { ThemeModule } from "./theme/theme.module";
+import { DataService } from "./data.service";
 
 @NgModule({
    bootstrap: [
@@ -25,7 +26,7 @@ import { ThemeModule } from "./theme/theme.module";
    declarations: [
       AppComponent,
    ],
-   providers: [],
+   providers: [DataService],
    schemas: [
       NO_ERRORS_SCHEMA
    ]

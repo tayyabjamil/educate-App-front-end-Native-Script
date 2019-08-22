@@ -7,10 +7,33 @@
 .pagebg {
     background-color: $pageBg;
 }
-
+.mutedDark {
+    color: $mutedDark;
+}
 .textfieldBorderColor {
     border-color: $primary-color;
-    border-width: 1
+    border-width: 1;
+}
+
+.primaryWhiteBg {
+    background-color: white;
+}
+
+.boxBorder {
+    border-radius: 5%
+}
+
+.p-b-100 {
+    padding-bottom: 120dp;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.b-b-1 {
+    border-bottom-width: 0.7dp;
+    border-bottom-color: #d4d4d4;
 }
 
 .colorWhite {
@@ -20,7 +43,7 @@
 .bgWhite {
     background-color: white;
 }
-.mutedcolor{
+.mutedColor{
     color:$mutedcolor;
 }
 .border-r-5 {
@@ -31,4 +54,42 @@
 }
 .secondrycolor{
     color:$secondary-color;
+}
+
+.fas {
+    font-family: Font Awesome 5 Free, fa-solid-900;
+    font-weight: 900; 
+}
+.fontoswald{
+    font-family: 'Oswald','Oswald-Regular','Oswald-Bold';
+    font-weight: 900;
+}
+.Oswald {
+    font-family: 'Oswald-Regular';
+}
+.Roboto {
+    font-family: 'Roboto';
+}
+
+.borderW5  {
+    border-width: 3dp;
+} 
+.borderColor {
+    border-color: #727272;
+}
+
+.f-18 {
+    font-size: 18;
+}
+
+.f-22 {
+    font-size: 22;
+}
+
+.f-24 {
+    font-size: 24;
+}
+
+.b-r-100 {
+    border-radius: 100%;
 }

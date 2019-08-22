@@ -1,0 +1,39 @@
+<GridLayout rows="auto,*,auto" column="*" class="pagebg">
+  <Label text="New Query Form" horizontalAlignment="center" [marginTop]="pageSide/2" class="Oswald primaryColor"
+    textWrap="true"></Label>
+
+  <StackLayout row="1" class="bgWhite" [marginTop]="pageSide/2" [marginRight]="pageSide/2" [marginLeft]="pageSide/2">
+
+    <Label text="Title" class="Roboto primaryColor" [marginTop]="pageSide/4" [marginRight]="pageSide/2"
+      [marginLeft]="pageSide/2"></Label>
+    <TextField class="textfieldBorderColor" style="height: 10%" [marginTop]="pageSide/4" [marginRight]="pageSide/2"
+      [marginLeft]="pageSide/2"></TextField>
+    <Label text="Type" class="Roboto primaryColor" [marginTop]="pageSide/4" [marginRight]="pageSide/2"
+      [marginLeft]="pageSide/2"></Label>
+    <TextField hint="" class="textfieldBorderColor"style="height: 10%"[marginTop]="pageSide/4" [marginRight]="pageSide/2"
+      [marginLeft]="pageSide/2"></TextField>
+    <GridLayout row="1" rows="auto,auto" columns="*,*">
+      <Label row="0" col="0" text="From" class="Roboto primaryColor" [marginTop]="pageSide/4" [marginRight]="pageSide/2"
+        [marginLeft]="pageSide/2"></Label>
+      <TextField row="0" col="1" class="textfieldBorderColor " [marginTop]="pageSide/4" [marginRight]="pageSide/2"
+        [marginLeft]="pageSide/2" style="height: 10%" > </TextField>
+      <Label row="1" col="0" text="To" class="Roboto primaryColor" [marginTop]="pageSide/4" [marginRight]="pageSide/2"
+        [marginLeft]="pageSide/2"></Label>
+      <TextField row="1" col="1" class="textfieldBorderColor" [marginTop]="pageSide/4" [marginRight]="pageSide/2"
+        [marginLeft]="pageSide/2" style="height: 10%"></TextField>
+
+    </GridLayout>
+    <Label text="Amount" class="Roboto primaryColor" [marginTop]="pageSide/4" [marginRight]="pageSide/2"
+      [marginLeft]="pageSide/2"></Label>
+    <TextField class="textfieldBorderColor" [marginTop]="pageSide/4" [marginRight]="pageSide/2"
+      [marginLeft]="pageSide/2" style="height: 10%"></TextField>
+    <Label text="Description" class="Roboto primaryColor" [marginTop]="pageSide/4" [marginRight]="pageSide/2"
+      [marginLeft]="pageSide/2"></Label>
+    <TextField class="textfieldBorderColor" [marginTop]="pageSide/4" [marginRight]="pageSide/2"
+      [marginLeft]="pageSide/2" style="height: 10%"></TextField>
+  </StackLayout>
+  <StackLayout row="2" class="buttonbg" [marginLeft]="pageSide" [marginTop]="pageSide/4" [marginRight]="pageSide"
+    [marginBottom]="pageSide">
+    <ns-button text="Submit" color="white"></ns-button>
+  </StackLayout>
+</GridLayout>

@@ -1,0 +1,35 @@
+<ActionBar title="Queries">
+  <GridLayout columns="*,*" [marginLeft]="pageSide/4" [marginRight]="pageSide/4">
+
+    <Label col="1" text="&#xf002;" class="fas"  horizontalAlignment="right"></Label>
+    <Label col="0" text="Queries" style="font-size: 20%" class="fontoswald" horizaontalAlignment="left"></Label>
+  </GridLayout>
+</ActionBar>
+<GridLayout rows="*" columns="" class="pagebg">
+
+  <ListView row="0" [items]="countries" separatorColor="transparent">
+    <ng-template let-country="item">
+      <GridLayout>
+
+        <GridLayout row="0" rows="*,*,*" columns="auto,*,auto" [marginBottom]="pageSide/4" [marginLeft]="pageSide/4"
+          [marginRight]="pageSide/4" class="bgWhite">
+          <Image col="0" row="0" rowSpan="2" [src]="country.imageSrc" [height]="pageSide" [width]="pageSide"
+            verticalAlignment="center" class="thumb img-circle"></Image>
+
+          <Label col="1" row="0" [text]="country.name" [marginLeft]="pageSide"></Label>
+          <Label col="1" row="1" text="Description" [marginLeft]="pageSide"></Label>
+          <Label col="1" row="2" text="500 Rs" [marginLeft]="pageSide"></Label>
+
+
+          <Label row="0" col="2" text="31 Sep"></Label>
+          <Label row="1" col="2" class="fas " rowSpan="2" style="font-size: 20% ;" horizontalAlignment="center"
+            text="&#xf3e5;"></Label>
+
+        </GridLayout>
+
+      </GridLayout>
+    </ng-template>
+  </ListView>
+<Label text="&#xf14b;" [nsRouterLink]="['/home/newquery']" style="font-size: 50%" class="fas primaryColor" [marginTop]="pageSide*11" [marginBottom]="pageSide/4" [marginLeft]="pageSide*8" ></Label>
+
+</GridLayout>

@@ -43,16 +43,15 @@
     </ng-template>
 
     <ng-template pagerTemplateKey="image" let-i="index" let-item="item">
-      <GridLayout rows="auto,auto" columns="*" [marginRight]="pageSide" [marginLeft]="pageSide" [marginTop]="boxSize/2"
-       >
-        <ns-image-upload ></ns-image-upload>
+      <GridLayout rows="auto,auto" columns="*" [marginRight]="pageSide" [marginLeft]="pageSide" [marginTop]="boxSize/2">
+        <ns-image-upload></ns-image-upload>
         <Label row="1" text="Tap to Select your image" class="text-center Oswald primaryColor m-t-15 m-b-15 "></Label>
 
       </GridLayout>
     </ng-template>
   </Pager>
-  <StackLayout row="2" [nsRouterLink]="['/home']"
-    class="m-t-20 m-b-20 textfieldBorderColor  buttonbg secondrycolor" [marginLeft]="pageSide" [marginRight]="pageSide">
+  <StackLayout row="2" [nsRouterLink]="['/home']" class="m-t-20 m-b-20 textfieldBorderColor  buttonbg secondrycolor"
+    [marginLeft]="pageSide" [marginRight]="pageSide">
 
     <ns-button text="Next"></ns-button>
 
