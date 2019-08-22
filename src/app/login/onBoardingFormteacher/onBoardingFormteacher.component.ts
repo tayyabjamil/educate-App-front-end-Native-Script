@@ -17,9 +17,9 @@ export class OnBoardingFormteacherComponent implements OnInit {
   pageSide;
   boxSize;
   currentPagerIndex = 0;
-  
+
   onBoardingForm;
-  
+
   latestReceivedIndex = 0
   constructor(private page: Page, private formBuilder: FormBuilder, private pageservice: PageService) {
     this.page.actionBarHidden = true;
@@ -34,17 +34,13 @@ export class OnBoardingFormteacherComponent implements OnInit {
       title: 'Acadmics Information',
       key: 'Acadmics'
     },
-    {
-      title: 'Profile Pic',
-      key: 'image'
-    },
+
   ];
 
   ngOnInit() {
     const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
     this.page.actionBarHidden = true;
-    this.boxSize = deviceWidth * 0.35;
-    this.pageSide = deviceWidth * 0.10;
+    this.pageSide = this.pageservice.pageSidePadding();
 
     this.onBoardingForm = this.formBuilder.group({
       Firstname: new FormControl("", [Validators.required, Validators.email]),
@@ -65,9 +61,9 @@ export class OnBoardingFormteacherComponent implements OnInit {
   }
 
   get formtitle() {
-    
-      return this.onBoardingitems[this.currentPagerIndex].title;
-    }
+
+    return this.onBoardingitems[this.currentPagerIndex].title;
+  }
 
   public templateSelector = (item: any) => {
     switch (item.key) {
@@ -79,10 +75,8 @@ export class OnBoardingFormteacherComponent implements OnInit {
         return 'Acadmics'
       }
         break;
-      case 'image': {
-        return 'image'
-      }
-        break;
+
+
     }
   }
 

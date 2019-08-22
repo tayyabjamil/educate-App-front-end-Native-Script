@@ -12,15 +12,16 @@ import { NewqueryComponent } from "./Newquery/Newquery.component";
 import { LoginComponent } from "../login/login.component";
 
 export const routes: Routes = [
-    { path: "", component: HomeComponent,
+    {
+        path: "", component: HomeComponent,
         children: [
             // { path: "", component: DashboardComponent },
             { path: "", component: QueriesComponent },
             { path: "messages", component: MessagesComponent },
             { path: "courses", component: CoursesComponent },
-            {path:"queries",component:QueriesComponent},
-            {path:"newquery",component:NewqueryComponent},
-            
+            { path: "queries", component: QueriesComponent },
+            { path: "newquery", component: NewqueryComponent },
+
         ]
     },
 ];

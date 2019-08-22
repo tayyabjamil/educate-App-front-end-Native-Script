@@ -8,10 +8,12 @@
 
     <ng-template pagerTemplateKey="personalInfo" let-i="index" let-item="item">
 
-      <GridLayout class="pager-item" rows="auto" columns="*">
+      <GridLayout class="pager-item" rows="auto,auto" columns="*">
+        <GridLayout row="0" rows="auto" columns="*" [marginRight]="pageSide" [marginLeft]="pageSide">
+          <ns-image-upload></ns-image-upload>
+        </GridLayout>
 
-        <StackLayout row="1" [marginTop]="boxSize/2" class="textfieldBorderColor bgWhite" style="padding: 5%"
-          [marginRight]="pageSide" [marginLeft]="pageSide">
+        <StackLayout row="1" class=" bgWhite" [marginRight]="pageSide" [marginLeft]="pageSide" [marginTop]="pageSide">
           <ns-textField label="Firstname" rtext="Enter your data" [rformgroup]="onBardingForm" rcontrolname="Firstname">
           </ns-textField>
           <ns-textField label="Lastname" rtext="Enter your data" [rformgroup]="onBardingForm" rcontrolname="Lastname">
@@ -28,8 +30,8 @@
     <ng-template pagerTemplateKey="contactInfo" let-i="index" let-item="item">
       <GridLayout class="pager-item" rows="auto" columns="*">
 
-        <StackLayout row="0" [marginTop]="boxSize/2" class="textfieldBorderColor bgWhite" style="padding: 5%"
-          [marginRight]="pageSide" [marginLeft]="pageSide">
+        <StackLayout row="0" class=" bgWhite" style="padding: 5%" [marginRight]="pageSide" [marginLeft]="pageSide"
+          [marginTop]="pageSide/2">
           <ns-textField label="University" rtext="Enter your data" [rformgroup]="onBardingForm"
             rcontrolname="University"></ns-textField>
           <ns-textField label="Department" rtext="Enter your data" [rformgroup]="onBardingForm"
@@ -41,18 +43,10 @@
       </GridLayout>
     </ng-template>
 
-    <ng-template pagerTemplateKey="imageInfo" let-i="index" let-item="item">
-      <GridLayout rows="auto,auto" columns="*" class="" [marginRight]="pageSide" [marginLeft]="pageSide"
-        [marginTop]="boxSize/2">
-        <ns-image-upload (selectedImage)="onSelectedImage($event)" class="primaryColor"></ns-image-upload>
-        <Label row="1" text="Tap to Select your image"
-          class="text-center Oswald  m-t-15 m-b-15  bgWhite"></Label>
 
-      </GridLayout>
-    </ng-template>
   </Pager>
   <GridLayout row="2" [nsRouterLink]="['/home']" class="m-t-10 m-b-20" [marginBottom]="pageSide"
     class="textfieldBorderColor bgWhite primaryColor buttonbg " [marginLeft]="pageSide" [marginRight]="pageSide">
-    <ns-button row="1" col="1" text="Next" class="secondrycolor"  ></ns-button>
+    <ns-button row="1" col="1" text="Next" class="secondrycolor"></ns-button>
   </GridLayout>
 </GridLayout>

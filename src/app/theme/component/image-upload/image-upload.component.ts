@@ -8,7 +8,7 @@ import * as imagepicker from "nativescript-imagepicker";
   styleUrls: ['./image-upload.component.scss']
 })
 export class ImageUploadComponent implements OnInit {
-
+  pageSide;
   imageSrc: any;
   previewSize: number;
   @Output() selectedImage = new EventEmitter<any>();
@@ -18,8 +18,8 @@ export class ImageUploadComponent implements OnInit {
   ngOnInit() {
     const deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
     const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
-    this.previewSize = deviceWidth * 0.50;
-
+    this.previewSize = deviceWidth * 0.25;
+   this.pageSide=deviceHeight*0.10;
   }
 
 

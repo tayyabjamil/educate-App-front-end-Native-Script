@@ -56,10 +56,7 @@ export class OnBoardingFormComponent implements OnInit {
                 title: 'Academics Information',
                 key: 'contactInfo'
             },
-            {
-                title: 'Profile Picture',
-                key: 'imageInfo'
-            },
+          
         ];
 
     }
@@ -90,10 +87,7 @@ export class OnBoardingFormComponent implements OnInit {
                 return 'contactInfo'
             }
                 break;
-            case 'imageInfo': {
-                return 'imageInfo'
-            }
-                break;
+         
         }
     }
 

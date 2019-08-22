@@ -11,7 +11,7 @@ export class PageService {
     constructor() {
     // const deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
     const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
-    this.pageSide = deviceWidth * 0.04;
+    this.pageSide = deviceWidth * 0.07;
   
   }
 
