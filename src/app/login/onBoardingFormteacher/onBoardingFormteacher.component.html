@@ -32,7 +32,7 @@
     <ng-template pagerTemplateKey="Acadmics" let-i="index" let-item="item">
       <GridLayout rows="auto" columns="*">
 
-        <StackLayout row="0" [marginTop]="boxSize/2" class=" bgWhite" style="padding: 5%"
+        <StackLayout row="0" [marginTop]="boxSize" class=" bgWhite" style="padding: 5%"
           [marginRight]="pageSide" [marginLeft]="pageSide">
           <ns-textField label="University" rtext="Enter your data" [rformgroup]="onBoardingForm"
             rcontrolname="University"></ns-textField>
@@ -49,12 +49,10 @@
 
 
   </Pager>
-  <StackLayout row="2" [nsRouterLink]="['/home']" class="m-t-20 m-b-20 textfieldBorderColor  buttonbg secondrycolor"
-    [marginLeft]="pageSide" [marginRight]="pageSide" [marginBottom]="pageSide">
-
-    <ns-button text="Next"></ns-button>
-
-  </StackLayout>
+  <GridLayout row="2" [nsRouterLink]="['/home']" class="m-t-10 m-b-20" [marginBottom]="pageSide"
+  class="textfieldBorderColor bgWhite primaryColor buttonbg " [marginLeft]="pageSide" [marginRight]="pageSide">
+  <ns-button row="1" col="1" text="Next" class="secondrycolor"></ns-button>
+</GridLayout>
 
 </GridLayout>
 

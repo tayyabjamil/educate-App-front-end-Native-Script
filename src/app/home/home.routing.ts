@@ -16,7 +16,7 @@ export const routes: Routes = [
         path: "", component: HomeComponent,
         children: [
             // { path: "", component: DashboardComponent },
-            { path: "", component: QueriesComponent },
+            { path: "", component: ProfileComponent },
             { path: "messages", component: MessagesComponent },
             { path: "courses", component: CoursesComponent },
             { path: "queries", component: QueriesComponent },

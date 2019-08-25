@@ -39,9 +39,11 @@ export class OnBoardingFormteacherComponent implements OnInit {
 
   ngOnInit() {
     const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
+    const deviceHeight: number = platformModule.screen.mainScreen.widthDIPs;
+   
     this.page.actionBarHidden = true;
     this.pageSide = this.pageservice.pageSidePadding();
-
+     this.boxSize = deviceHeight * 0.30;
     this.onBoardingForm = this.formBuilder.group({
       Firstname: new FormControl("", [Validators.required, Validators.email]),
       Lastname: new FormControl('', [Validators.required, Validators.minLength(5)]),

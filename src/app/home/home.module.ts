@@ -14,7 +14,8 @@ import { ThemeModule } from '../theme/theme.module';
   imports: [
     NativeScriptCommonModule,
     HomeRoutingModule,
-    ThemeModule
+    ThemeModule,
+    
   ],
   declarations: [
     HomeComponent,

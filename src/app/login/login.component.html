@@ -9,6 +9,9 @@
         <GridLayout class="inactive-border pageSide primaryColor" verticalAlignment="center" horizontalAlignment="right"
           [width]="boxSize" [height]="boxSize" (tap)="onAccountSelection('student')"
           [ngClass]="{'selectedBorder' : (showType === 'student')}">
+          <Image row="0" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+          </Image>
+
           <Label class="fas icon primaryColor" text="&#xf14a;" *ngIf="showType == 'student'" verticalAlignment="top"
             horizontalAlignment="right"></Label>
 
@@ -17,6 +20,8 @@
         <GridLayout col="2" class="inactive-border pageSide primaryColor" verticalAlignment="center"
           horizontalAlignment="left" [width]="boxSize" [height]="boxSize" (tap)="onAccountSelection('teacher')"
           [ngClass]="{'selectedBorder' : (showType === 'teacher')}">
+          <Image row="0" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+          </Image>
           <Label class="fas icon primaryColor" text="&#xf14a;" *ngIf="showType == 'teacher'" verticalAlignment="top"
             horizontalAlignment="right"></Label>
         </GridLayout>
@@ -44,7 +49,7 @@
       <Label row="1" verticalAlignment='center' (tap)="toggleForm()" [marginBottom]="pageSide " [marginTop]="pageSide/2"
         [marginLeft]="pageSide">
         <FormattedString>
-          <Span text='No account? ' class='mutedColor fontoswald'></Span>
+          <Span text='No account? ' class=' fontoswald'></Span>
           <Span text='Signup' class='primaryColor fontoswald'></Span>
         </FormattedString>
       </Label>

@@ -19,7 +19,6 @@ import { ThemeModule } from '../theme/theme.module';
   declarations: [
     LoginComponent, 
     OnBoardingFormComponent,
-    OnBoardingFormComponent,
     OnBoardingFormteacherComponent,
   ]
 })
