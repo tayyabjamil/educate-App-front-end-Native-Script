@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { horizontalAlignmentProperty } from 'tns-core-modules/ui/page/page';
 
 @Component({
   selector: 'ns-icon',
@@ -6,6 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./icon.component.scss']
 })
 export class IconComponent implements OnInit {
+
+  @Input() row = 0;
+  @Input() class ='';
+
 
   @Input() col = 0;
   @Input() icon  = ''; //'#&x342;';

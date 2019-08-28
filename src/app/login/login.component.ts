@@ -39,6 +39,8 @@ export class LoginComponent implements OnInit {
       confirmpass: new FormControl('', [Validators.required, Validators.minLength(11)])
     });
   }
+  
+
 firstEvent(){
   this.childEvent.emit('Data from login');
 }

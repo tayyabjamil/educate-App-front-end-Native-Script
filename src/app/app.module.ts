@@ -8,7 +8,7 @@ import { AppComponent } from "./app.component";
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
-// import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
+ import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { LoginModule } from "./login/login.module";
 import { ThemeModule } from "./theme/theme.module";
 import { DataService } from "./data.service";
@@ -21,7 +21,9 @@ import { DataService } from "./data.service";
       NativeScriptModule,
       AppRoutingModule,
       ThemeModule,
-      LoginModule
+      LoginModule,
+      NativeScriptHttpClientModule
+   
    ],
    declarations: [
       AppComponent,

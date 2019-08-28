@@ -1,11 +1,11 @@
 <StackLayout [formGroup]="rformgroup">
 
-  <Label [text]="label"  class="primaryColor Roboto"></Label>
-  
-  <TextField [formControlName]="rcontrolname" [hint]="rtext"  
-   class="textFieldStling Roboto" [ngClass]="{ errorBorder :invalidControl}" [marginRight]="pageSide/4" [marginLeft]="pageSide/4"></TextField>
-  <Label text="incomplete input "  *ngIf="errorRequired"    class="errorlbl"  ></Label>
-  <Label text="format is incorrect" *ngIf="errorFormate"   class="errorlbl"></Label>
-  <Label text="length is incorrect" *ngIf="errorLength"    class="errorlbl"></Label>
+ 
+
+  <TextField [row]="row" [col]="col"  [formControlName]="rcontrolname" [hint]="rtext" [class]="class"
+    [ngClass]="{ errorBorder :invalidControl}" ></TextField>
+  <Label text="incomplete input " *ngIf="errorRequired" class="errorlbl"></Label>
+  <Label text="format is incorrect" *ngIf="errorFormate" class="errorlbl"></Label>
+  <Label text="length is incorrect" *ngIf="errorLength" class="errorlbl"></Label>
 
 </StackLayout>

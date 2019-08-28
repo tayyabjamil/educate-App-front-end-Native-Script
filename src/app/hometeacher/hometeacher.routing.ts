@@ -2,26 +2,24 @@
 import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
-import { HomeComponent } from "./home.component";
+import { HometeacherComponent } from "./hometeacher.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { MessagesComponent } from "./messages/messages.component";
-import { CoursesComponent } from "./courses/courses.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
+
 import { QueriesComponent } from "./Queries/Queries.component";
 import { NewqueryComponent } from "./Newquery/Newquery.component";
-import { LoginComponent } from "../login/login.component";
+import { RatingsComponent } from "./Ratings/Ratings.component";
 
 export const routes: Routes = [
     {
-        path: "", component: HomeComponent,
+        path: "", component: HometeacherComponent,
         children: [
-            // { path: "", component: DashboardComponent },
-           
-            { path: "profile", component: ProfileComponent },
+            {path:"profile",component:ProfileComponent},
             { path: "inbox", component: MessagesComponent },
+            { path:"ratings", component: RatingsComponent},
+            { path: "queries", component: QueriesComponent },
             { path: "newquery", component: NewqueryComponent },
-            { path: "queries", component: QueriesComponent},
-            
+
         ]
     },
 ];
@@ -30,4 +28,4 @@ export const routes: Routes = [
     imports: [NativeScriptRouterModule.forChild(routes)],  // set the lazy loaded routes using forChild
     exports: [NativeScriptRouterModule]
 })
-export class HomeRoutingModule { }
+export class HomeTeacherRoutingModule { }

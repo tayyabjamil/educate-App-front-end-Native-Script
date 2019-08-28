@@ -1,4 +1,4 @@
-<ScrollView class="pagebg ">
+<ScrollView class="pagelightbg ">
     <GridLayout rows="auto,auto,auto,auto,auto,auto" class="p-b-100" columns="*">
         <Image [height]="previewSize" stretch="aspectFill" class="b-r-100 borderW5 borderColor" [width]="previewSize"
             [marginTop]="previewSize/3" [src]="profileData?.imgUrl">
@@ -11,29 +11,29 @@
             [marginRight]="pageSide">
             <Label text="PERSONAL" class="f-12 mutedDark m-l-10 p-b-10" textWrap="true"></Label>
 
-            <StackLayout row="1" class="primaryWhiteBg boxBorder">
+            <StackLayout row="1" class="bgWhite boxBorder">
                 <GridLayout columns="auto,*,auto" [marginLeft]="pageSide" [marginRight]="pageSide" rows="auto,auto"
                     class="b-b-1" [paddingTop]="itemPadding" [paddingBottom]="itemPadding"
                     [paddingLeft]="itemPadding / 2" [paddingRight]="itemPadding / 2">
-                    <ns-icon col="0" class="fas" icon="&#xf0e0;"></ns-icon>
-                    <Label col="1" text="Email" class="mutedDark "></Label>
-                    <ns-icon col="2" icon="&#xf044;" class="fas"></ns-icon>
+                    <ns-icon col="0" class="fas primaryColor" icon="&#xf0e0;"></ns-icon>
+                    <Label col="1" text="Email" style="padding-top: 10%" class="mutedDark "></Label>
+                    <ns-icon col="2" icon="&#xf044;" class="fas primaryColor"></ns-icon>
                     <Label col="0" colSpan="2" row="1" [text]="profileData?.email" class="mutedDark Roboto"></Label>
                 </GridLayout>
                 <GridLayout columns="auto,*,auto" [marginLeft]="pageSide" [marginRight]="pageSide" rows="auto,auto"
                     class="b-b-1" [paddingTop]="itemPadding" [paddingBottom]="itemPadding"
                     [paddingLeft]="itemPadding / 2" [paddingRight]="itemPadding / 2">
-                    <ns-icon col="0" class="fas" icon="&#xf87b;"></ns-icon>
-                    <Label col="1" text="Contact" class="mutedDark "></Label>
-                    <ns-icon col="2" icon="&#xf044;" class="fas"></ns-icon>
+                    <ns-icon col="0" class="fas primaryColor" icon="&#xf87b;"></ns-icon>
+                    <Label col="1" text="Contact" style="padding-top: 10%" class="mutedDark "></Label>
+                    <ns-icon col="2" icon="&#xf044;" class="fas primaryColor"></ns-icon>
                     <Label col="0" colSpan="2" row="1" [text]="profileData?.phone" class="mutedDark Roboto"></Label>
                 </GridLayout>
                 <GridLayout columns="auto,*,auto" [marginLeft]="pageSide" [marginRight]="pageSide" rows="auto,auto"
                 class="b-b-1" [paddingTop]="itemPadding" [paddingBottom]="itemPadding"
                 [paddingLeft]="itemPadding / 2" [paddingRight]="itemPadding / 2">
-                <ns-icon col="0" class="fas" icon="&#xf3c5;"></ns-icon>
-                <Label col="1" text="Address" class="mutedDark "></Label>
-                <ns-icon col="2" icon="&#xf044;" class="fas"></ns-icon>
+                <ns-icon col="0" class="fas primaryColor" icon="&#xf3c5;"></ns-icon>
+                <Label col="1" text="Address" style="padding-top: 10%" class="mutedDark "></Label>
+                <ns-icon col="2" icon="&#xf044;" class="fas primaryColor"></ns-icon>
                 <Label col="0" colSpan="2" row="1" [text]="profileData?.address" class="mutedDark Roboto"></Label>
             </GridLayout>
             </StackLayout>
@@ -43,29 +43,29 @@
             [marginRight]="pageSide">
             <Label text="ACADMICS" class="f-12 mutedDark m-l-10 p-b-10" textWrap="true"></Label>
 
-            <StackLayout row="1" class="primaryWhiteBg boxBorder">
+            <StackLayout row="1" class="bgWhite boxBorder">
                 <GridLayout columns="auto,*,auto" [marginLeft]="pageSide" [marginRight]="pageSide" rows="auto,auto"
                     class="b-b-1" [paddingTop]="itemPadding" [paddingBottom]="itemPadding"
                     [paddingLeft]="itemPadding / 2" [paddingRight]="itemPadding / 2">
-                    <ns-icon col="0" icon="&#xf19c;" class="fas"></ns-icon>
-                    <Label col="1" text="University" class="mutedDark "></Label>
-                    <ns-icon col="2" icon="&#xf044;" class="fas"></ns-icon>
+                    <ns-icon col="0" icon="&#xf19c;" class="fas primaryColor"></ns-icon>
+                    <Label col="1" text="University" style="padding-top: 10%" class="mutedDark "></Label>
+                    <ns-icon col="2" icon="&#xf044;" class="fas primaryColor"></ns-icon>
                     <Label col="0" colSpan="2" row="1" [text]="profileData?.university" class="mutedDark Roboto"></Label>
                 </GridLayout>
                 <GridLayout columns="auto,*,auto" [marginLeft]="pageSide" [marginRight]="pageSide" rows="auto,auto"
                     class="b-b-1" [paddingTop]="itemPadding" [paddingBottom]="itemPadding"
                     [paddingLeft]="itemPadding / 2" [paddingRight]="itemPadding / 2">
-                    <ns-icon col="0" icon="&#xf19c;" class="fas"></ns-icon>
-                    <Label col="1" text="Semester" class="mutedDark "></Label>
-                    <ns-icon col="2"icon="&#xf044;" class="fas"></ns-icon>
+                    <ns-icon col="0" icon="&#xf19c;" class="fas primaryColor"></ns-icon>
+                    <Label col="1" text="Semester" style="padding-top: 10%" class="mutedDark "></Label>
+                    <ns-icon col="2"icon="&#xf044;" class="fas primaryColor"></ns-icon>
                     <Label col="0" colSpan="2" row="1" [text]="profileData?.semester" class="mutedDark Roboto"></Label>
                 </GridLayout>
                 <GridLayout columns="auto,*,auto" [marginLeft]="pageSide" [marginRight]="pageSide" rows="auto,auto"
                 class="b-b-1" [paddingTop]="itemPadding" [paddingBottom]="itemPadding"
                 [paddingLeft]="itemPadding / 2" [paddingRight]="itemPadding / 2">
-                <ns-icon col="0" icon="&#xf19c;" class="fas"></ns-icon>
-                <Label col="1" text="Department" class="mutedDark "></Label>
-                <ns-icon col="2" icon="&#xf044;" class="fas" ></ns-icon>
+                <ns-icon col="0" icon="&#xf19c;" class="fas primaryColor"></ns-icon>
+                <Label col="1" text="Department" style="padding-top: 10%" class="mutedDark "></Label>
+                <ns-icon col="2" icon="&#xf044;" class="fas primaryColor" ></ns-icon>
                 <Label col="0" colSpan="2" row="1" [text]="profileData?.department" class="mutedDark Roboto"></Label>
                
             </GridLayout>

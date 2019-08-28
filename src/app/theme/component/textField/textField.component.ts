@@ -13,8 +13,12 @@ export class TextFieldComponent implements OnInit {
   
   @Input() rformgroup: FormGroup;
   @Input() rcontrolname;
-  @Input() label;
+ 
   @Input() rtext;
+  @Input() row;
+  @Input() col;
+  @Input() class;
+  
   pageSide;
   
   constructor(private pageService: PageService) { }

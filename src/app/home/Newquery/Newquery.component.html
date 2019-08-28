@@ -1,38 +1,46 @@
 <ScrollView>
-  <GridLayout rows="auto,*,auto" column="*" class="pagebg">
+  <GridLayout rows="auto,*,auto" column="*" class="pagelightbg">
     <Label text="New Query Form" horizontalAlignment="center" [marginTop]="pageSide/2" class="Oswald primaryColor"
       textWrap="true"></Label>
+    <GridLayout row="1" class="bgWhite" [marginTop]="pageSide/2" [marginBottom]="pageSide/2" [marginRight]="pageSide/2"
+      [marginLeft]="pageSide/2">
 
-    <StackLayout row="1" class="bgWhite" [marginTop]="pageSide/2" [marginRight]="pageSide/2" [marginLeft]="pageSide/2">
 
-      <Label text="Title" class="Roboto primaryColor" [marginTop]="pageSide/4" [marginRight]="pageSide/2"
-        [marginLeft]="pageSide/2"></Label>
-      <TextField class="textfieldBorderColor" style="height: 10%" [marginTop]="pageSide/4" [marginRight]="pageSide/2"
-        [marginLeft]="pageSide/2"></TextField>
-      <Label text="Type" class="Roboto primaryColor" [marginTop]="pageSide/4" [marginRight]="pageSide/2"
-        [marginLeft]="pageSide/2"></Label>
-      <TextField hint="" class="textfieldBorderColor" style="height: 10%" [marginTop]="pageSide/4"
-        [marginRight]="pageSide/2" [marginLeft]="pageSide/2"></TextField>
-      <GridLayout row="1" rows="auto,auto" columns="*,*">
-        <TextField row="0" col="0" hint="From" [(ngModel)]="fromdate" [marginLeft]="pageSide/2" (tap)="pickDatefrom()" editable="false">
-        </TextField>
-        <Label row="0" col="1" [text]="fromdate" [marginLeft]="pageSide/2" [marginRight]="pageSide/2" class="textfieldBorderColor" textWrap="true" [marginTop]="pageSide/2" ></Label>
-        <TextField row="1" col="0" hint="To"  [(ngModel)]="todate" [marginLeft]="pageSide/2" (tap)="pickDateto()"  editable="false">
-        </TextField>
-        <Label row="1" col="1" [text]="todate" [marginLeft]="pageSide/2" [marginRight]="pageSide/2"  class="textfieldBorderColor" textWrap="true" [marginTop]="pageSide/2"></Label>
+      <StackLayout [margin]="pageSide/2">
 
-      </GridLayout>
-      <Label text="Amount" class="Roboto primaryColor" [marginTop]="pageSide/4" [marginRight]="pageSide/2"
-        [marginLeft]="pageSide/2"></Label>
-      <TextField class="textfieldBorderColor" [marginTop]="pageSide/4" [marginRight]="pageSide/2"
-        [marginLeft]="pageSide/2" style="height: 10%"></TextField>
-      <Label text="Description" class="Roboto primaryColor" [marginTop]="pageSide/4" [marginRight]="pageSide/2"
-        [marginLeft]="pageSide/2"></Label>
-      <TextField class="textfieldBorderColor" [marginTop]="pageSide/4" [marginRight]="pageSide/2"
-        [marginLeft]="pageSide/2" style="height: 10%"></TextField>
-    </StackLayout>
-    <StackLayout row="2" class="buttonbg" [marginLeft]="pageSide" [marginTop]="pageSide/4" [marginRight]="pageSide"
-      [marginBottom]="pageSide">
+        <Label text="Title" class="Roboto primaryColor"></Label>
+        <ns-textField class="textfieldBorderColor" [marginBottom]="pageSide/2" [rformgroup]="rform" rcontrolname="Title"
+          [rformgroup]="rform">
+        </ns-textField>
+
+        <Label text="Type" class="Roboto primaryColor"></Label>
+        <ns-textField class="textfieldBorderColor" [rformgroup]="rform" rcontrolname="Type"></ns-textField>
+
+        <GridLayout row="1" rows="auto,auto" columns="*,*">
+          <TextField row="0" col="0" hint="From" [(ngModel)]="fromdate" (tap)="pickDatefrom()" editable="false"
+            class="Roboto primaryColor" [rformgroup]="rform" rcontrolname="fromdate">
+          </TextField>
+          <Label row="0" col="1" [text]="fromdate" [marginLeft]="pageSide/2" [marginRight]="pageSide/2"
+            class="textfieldBorderColor" [marginTop]="pageSide/2"></Label>
+          <TextField row="1" col="0" hint="To" [(ngModel)]="todate" (tap)="pickDateto()" editable="false"
+            class="Roboto primaryColor" [rformgroup]="rform" rcontrolname="todate">
+          </TextField>
+          <Label row="1" col="1" [text]="todate" [marginLeft]="pageSide/2" [marginRight]="pageSide/2"
+            class="textfieldBorderColor" textWrap="true" [marginTop]="pageSide/2"></Label>
+
+        </GridLayout>
+
+        <Label text="Amount" class="Roboto primaryColor"></Label>
+        <ns-textField class="textfieldBorderColor" [rformgroup]="rform" rcontrolname="Amount">
+        </ns-textField>
+
+        <Label text="Description" class="Roboto primaryColor"></Label>
+        <ns-textField class="textfieldBorderColor" [rformgroup]="rform" rcontrolname="Description">
+        </ns-textField>
+
+      </StackLayout>
+    </GridLayout>
+    <StackLayout row="2" class="primarybg" [marginLeft]="pageSide" [marginRight]="pageSide" [marginBottom]="pageSide">
       <ns-button text="Submit" color="white"></ns-button>
     </StackLayout>
   </GridLayout>

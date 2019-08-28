@@ -1,96 +1,66 @@
 @import 'variables';
 
 
-.primaryColor {
-    color: $primary-color;
+.primarybg{
+    background-color: #c1266c;
 }
-.pagebg {
+.pagelightbg {
     background-color: $pageBg;
-}
-.mutedDark {
-    color: $mutedDark;
-}
-.textfieldBorderColor {
-    border-color: $primary-color;
-    border-width: 1;
-}
-
-.primaryWhiteBg {
-    background-color: white;
-}
-
-.boxBorder {
-    border-radius: 5%
-}
-
-.p-b-100 {
-    padding-bottom: 120dp;
-}
-
-.capitalize {
-    text-transform: capitalize;
-}
-
-.b-b-1 {
-    border-bottom-width: 0.7dp;
-    border-bottom-color: #d4d4d4;
-}
-
-.colorWhite {
-    color: rgb(241, 241, 241);
 }
 
 .bgWhite {
-    background-color: white;
+    background-color: rgb(245, 240, 240);
+}
+.primaryColor {
+    color: $primary-color;
+   
+}
+
+.mutedDarkbg {
+background-color:$mutedDark;    
+}
+
+.mutedDark {
+    color: $mutedDark;
+}
+.lightcolor{
+    color:#ebc4c0;
+}
+.textfieldBorderColor {
+    border-color: $primary-color;
+    border-width: 1dp;
+}
+.fontbig{
+    font-size: 10%;
+}
+.borderradius {
+    border-radius: 5%
 }
 .mutedColor{
     color:$mutedcolor;
 }
-.border-r-5 {
-    border-radius: 5%;
-}
-.buttonbg{
-    background-color: $buttonbg;
-}
-.secondrycolor{
+.whitecolor{
     color:$secondary-color;
 }
 
 .fas {
     font-family: Font Awesome 5 Free, fa-solid-900;
     font-weight: 900; 
-}
-.fontoswald{
-    font-family: 'Oswald','Oswald-Regular','Oswald-Bold';
-    font-weight: 900;
+  
 }
 .Oswald {
     font-family: 'Oswald-Regular';
 }
+.Oswaldbig {
+    font-family: 'Oswald-Regular';
+ 
+}
 .Roboto {
     font-family: 'Roboto';
-    font-weight: 400;
+    font-weight: 800;
+}
+.Robotobig {
+    font-family: 'Roboto';
+    font-weight: 1200;
 }
 
-.borderW5  {
-    border-width: 3dp;
-} 
-.borderColor {
-    border-color: #727272;
-}
-
-.f-18 {
-    font-size: 18;
-}
-
-.f-22 {
-    font-size: 22;
-}
-
-.f-24 {
-    font-size: 24;
-}
-
-.b-r-100 {
-    border-radius: 100%;
-}

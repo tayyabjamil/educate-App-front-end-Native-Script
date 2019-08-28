@@ -1,6 +1,6 @@
 <ScrollView>
     
-<GridLayout rows="auto,*,auto" class="pagebg">
+<GridLayout rows="auto,*,auto" class="pagelightbg">
   <GridLayout row="0">
     <Label text="formtitle" class="text-center Oswald  m-t-15 m-b-15 primaryColor"></Label>
   </GridLayout>
@@ -16,13 +16,14 @@
         </GridLayout>
 
         <StackLayout row="1" class=" bgWhite" [marginTop]="pageSide/2"[marginRight]="pageSide" [marginLeft]="pageSide" >
-          <ns-textField label="Firstname" rtext="Enter your data" [rformgroup]="onBardingForm" rcontrolname="Firstname">
+          <ns-textField rtext="Firstname"  [rformgroup]="onBardingForm" rcontrolname="Firstname">
           </ns-textField>
-          <ns-textField label="Lastname" rtext="Enter your data" [rformgroup]="onBardingForm" rcontrolname="Lastname">
+          
+          <ns-textField rtext="Lastname"  [rformgroup]="onBardingForm" rcontrolname="Lastname">
           </ns-textField>
-          <ns-textField label="Adress" rtext="Enter your data" [rformgroup]="onBardingForm" rcontrolname="Adress">
+          <ns-textField rtext="Adress"  [rformgroup]="onBardingForm" rcontrolname="Adress">
           </ns-textField>
-          <ns-textField label="Contact" rtext="Enter your data" [rformgroup]="onBardingForm" rcontrolname="Contact">
+          <ns-textField rtext="Contact"  [rformgroup]="onBardingForm" rcontrolname="Contact">
           </ns-textField>
 
         </StackLayout>
@@ -34,11 +35,11 @@
 
         <StackLayout row="0" class=" bgWhite" style="padding: 5%" [marginRight]="pageSide" [marginLeft]="pageSide"
         [marginTop]="boxSize">
-          <ns-textField label="University" rtext="Enter your data" [rformgroup]="onBardingForm"
+          <ns-textField rtext="University" [rformgroup]="onBardingForm"
             rcontrolname="University"></ns-textField>
-          <ns-textField label="Department" rtext="Enter your data" [rformgroup]="onBardingForm"
+          <ns-textField rtext="Department" [rformgroup]="onBardingForm"
             rcontrolname="Department"></ns-textField>
-          <ns-textField label="Semester" rtext="Enter your data" [rformgroup]="onBardingForm" rcontrolname="Semester">
+          <ns-textField rtext="Semester" [rformgroup]="onBardingForm" rcontrolname="Semester">
           </ns-textField>
 
         </StackLayout>
@@ -47,7 +48,7 @@
   
   </Pager>
   <GridLayout row="2" [nsRouterLink]="['/home']" class="m-t-10 m-b-20" [marginBottom]="pageSide"
-    class="textfieldBorderColor bgWhite primaryColor buttonbg " [marginLeft]="pageSide" [marginRight]="pageSide">
+    class="textfieldBorderColor mutedDark primaryColor primarybg " [marginLeft]="pageSide" [marginRight]="pageSide">
     <ns-button row="1" col="1" text="Next" class="secondrycolor"></ns-button>
   </GridLayout>
 </GridLayout>

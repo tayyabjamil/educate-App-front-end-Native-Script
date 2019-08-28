@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import * as platformModule from 'tns-core-modules/platform';
-import { DataService } from '~/app/data.service';
 
    
 @Component({
@@ -21,16 +20,16 @@ export class QueriesComponent implements OnInit {
     { name: "Lab database", imageSrc: "https://play.nativescript.org/dist/assets/img/flags/de.png" },
     ];
 pageSide;
-  constructor(private service:DataService) {
+  constructor() {
    
 
    }
-queries;
+
   ngOnInit() {
     const deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
     const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
+
     this.pageSide = deviceWidth * 0.10;
-    this.queries=this.service.queries;
   }
  
 }

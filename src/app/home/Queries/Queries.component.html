@@ -1,35 +1,33 @@
-<ActionBar title="Queries">
-  <GridLayout columns="*,*" [marginLeft]="pageSide/4" [marginRight]="pageSide/4">
+<ActionBar title="Queries" class="primaryColor">
+  <GridLayout columns="*,auto" [marginLeft]="pageSide/4" [marginRight]="pageSide/4">
 
-    <Label col="1" text="&#xf002;" class="fas"  horizontalAlignment="right"></Label>
-    <Label col="0" text="Queries" style="font-size: 20%" class="fontoswald" horizaontalAlignment="left"></Label>
+    <ns-icon col="1" icon="&#xf002;" class="primaryColor"></ns-icon>
+    <Label col="0" text="Queries" style="font-size: 20%" class="fontoswald"></Label>
   </GridLayout>
 </ActionBar>
-<GridLayout rows="*" columns="" class="pagebg">
+<GridLayout rows="*" columns="" class="pagelightbg">
 
-  <ListView row="0" [items]="countries" separatorColor="transparent">
-    <ng-template let-country="item">
+  <ListView row="0" [items]="queries" separatorColor="transparent">
+    <ng-template let-queries="item">
       <GridLayout>
 
-        <GridLayout row="0" rows="*,*,*" columns="auto,*,auto" [marginBottom]="pageSide/4" [marginLeft]="pageSide/4"
-          [marginRight]="pageSide/4" class="bgWhite">
-          <Image col="0" row="0" rowSpan="2" [src]="country.imageSrc" [height]="pageSide" [width]="pageSide"
-            verticalAlignment="center" class="thumb img-circle"></Image>
+        <GridLayout row="0" rows="*,*,*" columns="auto,*,auto" [marginBottom]="pageSide/4" [marginLeft]="pageSide/2"
+          [marginRight]="pageSide/2" class="bgWhite">
 
-          <Label col="1" row="0" [text]="country.name" [marginLeft]="pageSide"></Label>
-          <Label col="1" row="1" text="Description" [marginLeft]="pageSide"></Label>
-          <Label col="1" row="2" text="500 Rs" [marginLeft]="pageSide"></Label>
+          <Label class="Roboto" col="1" row="0" [text]="queries.title" [marginLeft]="pageSide"></Label>
+          <Label class="Roboto" col="1" row="1" [text]="queries.description" [marginLeft]="pageSide"></Label>
+          <Label class="Roboto" col="1" row="2" [text]="queries.estimate" [marginLeft]="pageSide"></Label>
 
 
-          <Label row="0" col="2" text="31 Sep"></Label>
-          <Label row="1" col="2" class="fas " rowSpan="2" style="font-size: 20% ;" horizontalAlignment="center"
-            text="&#xf3e5;"></Label>
+          <Label class="Roboto" row="0" col="2" [text]="queries.startDate"></Label>
+          <ns-icon icon="&#xf0a9;" row="1" col="2" class="primaryColor"> </ns-icon>
 
         </GridLayout>
 
       </GridLayout>
     </ng-template>
   </ListView>
-<Label text="&#xf14b;" [nsRouterLink]="['/home/newquery']" style="font-size: 50%" class="fas primaryColor" [marginTop]="pageSide*11" [marginBottom]="pageSide/4" [marginLeft]="pageSide*8" ></Label>
+  <Label text="&#xf14b;" [nsRouterLink]="['/home/newquery']" style="font-size: 50%" class="fas mutedDark"
+    [marginTop]="pageSide*11" [marginBottom]="pageSide/4" [marginLeft]="pageSide*8" [marginRight]="pageSide/2"></Label>
 
 </GridLayout>
