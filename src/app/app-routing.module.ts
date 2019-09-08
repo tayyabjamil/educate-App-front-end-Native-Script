@@ -9,9 +9,10 @@ const routes: Routes = [
     { path: "onBoardingFormteacher", loadChildren: "./login/login.module#LoginModule" },
     { path: "home", loadChildren: "./home/home.module#HomeModule" },
 ];
-
+    
 @NgModule({
     imports: [NativeScriptRouterModule.forRoot(routes)],
     exports: [NativeScriptRouterModule]
 })
+
 export class AppRoutingModule { }

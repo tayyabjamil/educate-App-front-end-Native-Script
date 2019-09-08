@@ -9,13 +9,14 @@ import { ProfileComponent } from './profile/profile.component';
 import { QueriesComponent } from './Queries/Queries.component';
 import { NewqueryComponent } from './Newquery/Newquery.component';
 import { ThemeModule } from '../theme/theme.module';
+import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
 
 @NgModule({
   imports: [
     NativeScriptCommonModule,
     HomeRoutingModule,
     ThemeModule,
-    
+    NativeScriptHttpClientModule
   ],
   declarations: [
     HomeComponent,

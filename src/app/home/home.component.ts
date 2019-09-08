@@ -5,9 +5,11 @@ import { Page } from 'tns-core-modules/ui/page/page';
   selector: 'ns-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  moduleId:module.id
+  moduleId: module.id
 })
+
 export class HomeComponent implements OnInit {
+
   newview: any;
 
   constructor(private _page: Page) { }
@@ -15,14 +17,13 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this._page.actionBarHidden = true;
   }
- 
-onviewSelection(view) {
-  this.newview = view
-}
 
-get showType() {
-  return this.newview;
-}
+  onviewSelection(view) {
+    this.newview = view
+  }
 
+  get showType() {
+    return this.newview;
+  }
 
 }
