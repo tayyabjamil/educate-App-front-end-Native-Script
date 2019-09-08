@@ -67,32 +67,34 @@ export class LoginComponent implements OnInit {
     if (this.userType) {
 
       if (this.userType === 'student') {
-        if (this.rform.valid) {
+        if(this.rform.valid) {
 
           console.log(this.rform.value);
-
+          
           this.httpService.login(this.rform.value).subscribe(result => {
             console.log("working");
-            this.navigateTo('login/onBoardingForm');
           }, (error) => {
             console.log(error);
           })
-        }
+        this.routerExtensions.navigate(['login/onBoardingForm'], {
+          transition: {
+            name: 'fade',
+            curve: 'linear'
+          }
+        });
       } else {
-          this.navigateTo('login/onBoardingFormteacher');
+        this.routerExtensions.navigate(['login/onBoardingFormteacher'], {
+          transition: {
+            name: 'fade',
+            curve: 'linear'
+          }
+        });
       }
     } else {
       alert('please select account type')
     }
   }
-
-  navigateTo(url) {
-    this.routerExtensions.navigate([url], {
-      transition: {
-        name: 'fade',
-        curve: 'linear'
-      }
-    });
-  }
+  
+} 
 }
 

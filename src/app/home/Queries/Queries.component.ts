@@ -30,6 +30,7 @@ export class QueriesComponent implements OnInit {
   getQueries() {
     this.httpService.getQueries().subscribe(res => {
       this.queries = res;
+      console.log(res);
     }, (error) => {
       console.log(error);
     });
