@@ -14,12 +14,11 @@ import { ThemeModule } from '../theme/theme.module';
     LoginRoutingModule,
     ThemeModule,
     PagerModule,
-   
    ],
   declarations: [
     LoginComponent, 
     OnBoardingFormComponent,
-    OnBoardingFormteacherComponent,
+    // OnBoardingFormteacherComponent,
   ]
 })
 

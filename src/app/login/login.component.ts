@@ -5,6 +5,8 @@ import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms'
 import { PageService } from '../theme/services/page.service';
 import { RouterExtensions } from 'nativescript-angular/router';
 import { HttpService } from '../shared/http.service';
+import { setBoolean } from "tns-core-modules/application-settings";
+import { AuthService } from '../shared/auth.service';
 
 @Component({
   selector: 'ns-login',
@@ -21,80 +23,63 @@ export class LoginComponent implements OnInit {
   isLoggingIn: boolean = true;
   rform: FormGroup
   pageSide;
+  isBusy = false;
 
   constructor(private page: Page, private formBuilder: FormBuilder, private pageService: PageService,
     private routerExtensions: RouterExtensions,
-    private httpService: HttpService) { }
+    private httpService: HttpService,
+    private authService: AuthService) { }
 
   ngOnInit() {
-    // const deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
     const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
     this.page.actionBarHidden = true;
     this.boxSize = deviceWidth * 0.35;
 
     this.pageSide = this.pageService.pageSidePadding();
 
-
     this.rform = this.formBuilder.group({
-      email: new FormControl("", [Validators.required, Validators.email]),
-      pass: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      confirmpass: new FormControl('', [Validators.required, Validators.minLength(11)])
+      email: new FormControl("test1@gmail.com", [Validators.required, Validators.email]),
+      password: new FormControl('password', [Validators.required, Validators.minLength(5)]),
+      userType: new FormControl('', Validators.required),
     });
   }
 
 
-  firstEvent() {
-    this.childEvent.emit('Data from login');
-  }
 
   onAccountSelection(user) {
-    this.userType = user
+    if (this.rform.controls['userType']) {
+      this.rform.controls['userType'].setValue(user);
+    }
+    this.userType = user;
   }
 
   get showType() {
     return this.userType;
   }
 
-  toggleForm() {
-    this.isLoggingIn = !this.isLoggingIn;
-  }
-
-  submit() {
-    console.log(this.rform.value);
-  }
-
   login() {
-    if (this.userType) {
-
-      if (this.userType === 'student') {
-        if(this.rform.valid) {
-
-          console.log(this.rform.value);
-          
-          this.httpService.login(this.rform.value).subscribe(result => {
-            console.log("working");
-          }, (error) => {
-            console.log(error);
-          })
-        this.routerExtensions.navigate(['login/onBoardingForm'], {
-          transition: {
-            name: 'fade',
-            curve: 'linear'
-          }
-        });
-      } else {
-        this.routerExtensions.navigate(['login/onBoardingFormteacher'], {
-          transition: {
-            name: 'fade',
-            curve: 'linear'
+    if (this.rform.controls['userType'].valid) {
+      if (this.rform.valid) {
+        this.isBusy = true;
+        this.httpService.login(this.rform.value).subscribe(result => {
+          console.log(result);
+          this.isBusy = false;
+          if ((<any>result).length !== 0) {
+            this.authService.setLoggedIn();
+            this.routerExtensions.navigate(['home'])
+          } else {
+            alert('username & email not found');
           }
         });
       }
     } else {
-      alert('please select account type')
+      alert('please select user type');
     }
   }
-  
-} 
+
+  signup() {
+      this.routerExtensions.navigate(['login/onBoardingForm'])
+  }
 }
+
 

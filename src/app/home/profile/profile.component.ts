@@ -3,6 +3,8 @@ import * as platformModule from 'tns-core-modules/platform';
 import { Page } from 'tns-core-modules/ui/page/page';
 import { PageService } from '~/app/theme/services/page.service';
 import { DataService } from '~/app/data.service';
+import { RouterExtensions } from 'nativescript-angular/router';
+import { AuthService } from '~/app/shared/auth.service';
 
 @Component({
   selector: 'ns-profile',
@@ -17,7 +19,9 @@ export class ProfileComponent implements OnInit {
   pageSide;
   profileData;
 
-  constructor(private _page: Page, private pageService: PageService, private dataService: DataService) { }
+  constructor(private _page: Page, private pageService: PageService, private dataService: DataService,
+    private routerExtensions: RouterExtensions,
+    private authService: AuthService) { }
 
   ngOnInit() {
     // const deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
@@ -28,6 +32,16 @@ export class ProfileComponent implements OnInit {
     this.pageSide = this.pageService.pageSidePadding();
     this._page.actionBarHidden = true;
     this.profileData = this.dataService.profileData;
+  }
+
+  logout() {
+    this.authService.removeLoggedIn();
+    this.routerExtensions.navigate(['login'], {
+      transition: {
+        name: 'slideRight',
+        curve: 'linear'
+      }
+    });
   }
 
 }

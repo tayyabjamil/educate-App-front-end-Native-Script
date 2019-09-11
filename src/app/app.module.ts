@@ -13,6 +13,8 @@ import { LoginModule } from "./login/login.module";
 import { ThemeModule } from "./theme/theme.module";
 import { DataService } from "./data.service";
 import { HttpService } from "./shared/http.service";
+import { AuthService } from "./shared/auth.service";
+import { AuthGuardService } from "./shared/authGuard.service";
 
 @NgModule({
    bootstrap: [
@@ -28,7 +30,7 @@ import { HttpService } from "./shared/http.service";
    declarations: [
       AppComponent,
    ],
-   providers: [DataService, HttpService],
+   providers: [DataService, HttpService,AuthService, AuthGuardService],
    schemas: [
       NO_ERRORS_SCHEMA
    ]

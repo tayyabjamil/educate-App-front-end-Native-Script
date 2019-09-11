@@ -37,48 +37,45 @@
     </StackLayout>
 
     <GridLayout style="border-radius: 10%" [marginRight]="pageSide" [marginLeft]="pageSide" row="3" colSpan="2"
-      columns="*,*" rows="auto,auto">
-      <StackLayout row="0"  colSpan="2" class="bgWhite borderradius"
-        [marginTop]="pageSide">
-       <StackLayout orientation="horizontal">
-        <ns-icon icon="&#xf199;" row="0" col="1" class="primaryColor" horizontalAlignment="right"></ns-icon>
-        <ns-textField rtext="Email" row="0" col="0"  [rformgroup]="rform" rcontrolname="email">
-        </ns-textField>
-       
-         
-       </StackLayout>
-      
-      <StackLayout orientation="horizontal">
-        <ns-icon icon="&#xf13e;" row="1" col="0" class="primaryColor"  horizontalAlignment="right"></ns-icon>
+      rows="auto,auto,auto">
+      <StackLayout row="0" colSpan="2" class="bgWhite borderradius" [marginTop]="pageSide">
+        <StackLayout orientation="horizontal">
+          <ns-icon icon="&#xf199;" row="0" col="1" class="primaryColor" horizontalAlignment="right"></ns-icon>
+          <ns-textField rtext="Email" row="0" col="0" [rformgroup]="rform" rcontrolname="email">
+          </ns-textField>
 
-        <ns-textField rtext="Password" row="1" col="1"  [rformgroup]="rform" rcontrolname="pass"
-        secure="false">
-      </ns-textField>
-     
-      </StackLayout> 
 
-        <StackLayout *ngIf="!isLoggingIn" row="2">
-          <ns-textField rtext="Confirm Password" class=" fas" [rformgroup]="rform" rcontrolname="confirmpass"
+        </StackLayout>
+
+        <StackLayout orientation="horizontal">
+          <ns-icon icon="&#xf13e;" row="1" col="0" class="primaryColor" horizontalAlignment="right"></ns-icon>
+
+          <ns-textField rtext="Password" row="1" col="1" [rformgroup]="rform" rcontrolname="password" secure="false">
+          </ns-textField>
+
+        </StackLayout>
+
+        <!-- <StackLayout *ngIf="!isLoggingIn" row="2">
+          <ns-textField rtext="Confirm Password" class=" fas" [rformgroup]="rform" rcontrolname="confirmPassword"
             secure="false">
           </ns-textField>
-        </StackLayout>
+        </StackLayout> -->
       </StackLayout>
 
-      <Label row="1" verticalAlignment='center' (tap)="toggleForm()" [marginBottom]="pageSide " [marginTop]="pageSide"
-        [marginLeft]="pageSide/2">
+
+      <StackLayout row="1" class="primarybg borderradius" [marginTop]="pageSide" [marginBottom]="pageSide">
+        <ns-button (onTap)="login()" text="Login"></ns-button>
+      </StackLayout>
+
+      <Label row="2" verticalAlignment='center' (tap)="signup()" [marginBottom]="pageSide " [marginTop]="pageSide"
+        [marginLeft]="pageSide/2" class="text-center">
         <FormattedString>
-          <Span text='No account? ' class='primaryColor fontoswald '></Span>
-          <Span text='Signup' class='primaryColor fontoswald'></Span>
+          <Span text="No account? Signup" class='primaryColor fontoswald '></Span>
         </FormattedString>
       </Label>
 
-
-      <StackLayout row="1" col="1" class="primarybg borderradius" [marginTop]="pageSide" [marginBottom]="pageSide">
-        <ns-button (onTap)="login()" class="lightcolor"
-          [text]="(showType === 'student') ? 'Signin Student!': 'Signin Teacher!'"></ns-button>
-
-      </StackLayout>
-
     </GridLayout>
+    <ActivityIndicator rowSpan="4" verticalAlignment="middle" horizontalAlignment="center" width="100" height="100"
+      [busy]="isBusy" class="activity-indicator"></ActivityIndicator>
   </GridLayout>
 </ScrollView>

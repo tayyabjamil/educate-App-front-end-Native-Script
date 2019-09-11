@@ -10,7 +10,7 @@ import { OnBoardingFormteacherComponent } from "./onBoardingFormteacher/onBoardi
 export const routes: Routes = [
     {path: "", component:LoginComponent },
     {path:"onBoardingForm",component:OnBoardingFormComponent},
-    {path:"onBoardingFormteacher",component:OnBoardingFormteacherComponent},
+    // {path:"onBoardingFormteacher",component:OnBoardingFormteacherComponent},
 ];
 
 @NgModule({

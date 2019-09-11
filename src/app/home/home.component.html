@@ -3,7 +3,7 @@
   <Label row="1" class="gradientline"></Label>
   <GridLayout row="2" columns="*,*,*,*,*" rows="*,*" class="pagebg">
 
-    <ns-icon icon="&#xf2bd;" row="0" col="0" (tap)="onviewSelection('profile')"
+    <!-- <ns-icon icon="&#xf2bd;" row="0" col="0" (tap)="onviewSelection('profile')"
       [ngClass]="{primaryColor : (showType === 'profile')}"></ns-icon>
 
     <ns-icon icon="&#xf059;" row="0" col="1" (tap)="onviewSelection('Queries')"
@@ -16,17 +16,21 @@
       [ngClass]="{primaryColor : (showType === 'courses')}"></ns-icon>
 
     <ns-icon icon="&#xf02d;" row="0" col="4" (tap)="onviewSelection('courses')"
-      [ngClass]="{primaryColor : (showType === 'courses')}"></ns-icon>
+      [ngClass]="{primaryColor : (showType === 'courses')}"></ns-icon> -->
 
-    <Label text="Profile" [ngClass]="{primaryColor : (showType === 'profile')}" col="0" row="1"
+    <Label text="Profile" padding="10"  [ngClass]="{primaryColor : (showType === 'profile')}" col="0" row="1"
       [nsRouterLink]="['/home/profile']" horizontalAlignment="center"></Label>
-    <Label text="Quries" [ngClass]="{primaryColor : (showType === 'Quries')}" col="1" row="1"
+
+      <Label text="Quries" padding="10" [ngClass]="{primaryColor : (showType === 'Quries')}" col="1" row="1"
       [nsRouterLink]="['/home/queries']" horizontalAlignment="center"></Label>
-    <Label text="Inbox" [ngClass]="{primaryColor : (showType === 'Inbox')}" col="2" row="1"
+
+      <Label text="Inbox" padding="10"  [ngClass]="{primaryColor : (showType === 'Inbox')}" col="2" row="1"
       [nsRouterLink]="['/home/inbox']" horizontalAlignment="center"></Label>
-    <Label text="Courses" [ngClass]="{primaryColor : (showType === 'Courses')}" col="3" row="1"
+
+      <Label text="Courses" padding="10" [ngClass]="{primaryColor : (showType === 'Courses')}" col="3" row="1"
       [nsRouterLink]="['/home/courses']" horizontalAlignment="center"></Label>
-    <Label text="Ratings" [ngClass]="{primaryColor : (showType === 'Courses')}" col="4" row="1"
+
+      <Label text="Ratings" padding="10"  [ngClass]="{primaryColor : (showType === 'Courses')}" col="4" row="1"
       [nsRouterLink]="['/home/courses']" horizontalAlignment="center"></Label>
 
   </GridLayout>
