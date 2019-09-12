@@ -5,6 +5,7 @@ import { Page } from 'tns-core-modules/ui/page/page';
 
 import * as platformModule from 'tns-core-modules/platform';
 import { PageService } from '~/app/theme/services/page.service';
+import { HttpService } from '~/app/shared/http.service';
 
 @Component({
     selector: 'ns-onBoardingForm',
@@ -25,7 +26,11 @@ export class OnBoardingFormComponent implements OnInit {
     @ViewChild('pager', { static: true }) pager: ElementRef;
 
 
-    constructor(private page: Page, private formBuilder: FormBuilder, private pageService: PageService) {
+    constructor(
+        private page: Page, 
+        private formBuilder: FormBuilder, 
+        private pageService: PageService,
+        private httpSerivce: HttpService) {
 
     }
 
@@ -73,8 +78,12 @@ export class OnBoardingFormComponent implements OnInit {
     }
 
     onSubmit() {
-        debugger;
-        console.log(this.onBardingForm.value);
+        // console.log(this.onBardingForm.value);
+        this.httpSerivce.createProfile().subscribe((result) => {
+            console.log(result+ 'this is sign up');
+        },(error) => {
+          console.log(error + 'form sign up');  
+        });
     }
 
     public templateSelector = (item: any) => {

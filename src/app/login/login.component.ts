@@ -70,7 +70,9 @@ export class LoginComponent implements OnInit {
           } else {
             alert('username & email not found');
           }
-        });
+        }, (error) => {
+          console.log(error)
+        })
       }
     } else {
       alert('please select user type');
@@ -78,7 +80,7 @@ export class LoginComponent implements OnInit {
   }
 
   signup() {
-      this.routerExtensions.navigate(['login/onBoardingForm'])
+    this.routerExtensions.navigate(['login/onBoardingForm'])
   }
 }
 
