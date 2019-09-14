@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
           console.log(result);
           this.isBusy = false;
           if ((<any>result).length !== 0) {
-            this.authService.setLoggedIn();
+            this.authService.setLoggedIn([result[0]]);
             this.routerExtensions.navigate(['home']);
           } else {
             alert('username & email not found');

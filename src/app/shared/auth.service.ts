@@ -1,19 +1,26 @@
 import { Injectable } from '@angular/core';
-import { setBoolean, clear } from 'tns-core-modules/application-settings';
+import { setBoolean, clear, setString, getString, setNumber, getNumber } from 'tns-core-modules/application-settings';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-constructor() { }
+  constructor() { }
 
- setLoggedIn() {
-   setBoolean('userLoggedIn', true);
- }
+  setLoggedIn(user) {
+    setNumber('userId', user[0].id);
+    setBoolean('userLoggedIn', true);
+  }
 
- removeLoggedIn() {
-   clear();
- }
+  removeLoggedIn() {
+    clear();
+  }
+
+  getUser() {
+    if (getNumber('userId')) {
+      return getNumber('userId');
+    }
+  }
 
 }

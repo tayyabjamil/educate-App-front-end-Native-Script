@@ -15,7 +15,7 @@ export class QueriesComponent implements OnInit {
   queries;
   pageSide;
 
-  constructor(private service: DataService, private httpService: HttpService) {
+  constructor(private httpService: HttpService) {
   }
 
   ngOnInit() {
@@ -23,12 +23,12 @@ export class QueriesComponent implements OnInit {
     const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
     this.pageSide = deviceWidth * 0.10;
     // this.queries = this.service.queries;
-
-    this.getQueries();
+    this.getUserQueries();
   }
 
-  getQueries() {
-    this.httpService.getQueries().subscribe(res => {
+  getUserQueries() {
+    this.httpService.getUserQueries()
+    .subscribe(res => {
       this.queries = res;
       console.log(res);
     }, (error) => {

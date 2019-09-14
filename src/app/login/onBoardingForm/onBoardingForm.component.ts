@@ -35,7 +35,11 @@ export class OnBoardingFormComponent implements OnInit {
     }
 
     onAccountSelection(user) {
-
+        if (user) {
+            if (this.onBoardingForm.controls['userType']) {
+                this.onBoardingForm.controls['userType'].setValue(user);
+            }
+        }
     }
 
     ngOnInit(): void {
@@ -89,15 +93,12 @@ export class OnBoardingFormComponent implements OnInit {
     get formtitle() {
         if (this.onBoarding[this.currentPagerIndex].title) {
             return this.onBoarding[this.currentPagerIndex].title;
-        }
-    }
-
+        }    }
     onSubmit() {
-        
         this.httpSerivce.createProfile(this.onBoardingForm.value).subscribe((result) => {
             console.log(result + 'this is sign up');
         }, (error) => {
-            console.log(error + 'form sign up');
+            console.log(error + 'error form sign up');
         });
     }
 
@@ -118,7 +119,6 @@ export class OnBoardingFormComponent implements OnInit {
 
         }
     }
-
     onSelectedImage(img) {
         alert('image is selected');
     }

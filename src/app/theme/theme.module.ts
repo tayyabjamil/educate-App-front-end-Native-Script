@@ -9,12 +9,14 @@ import { TextFieldComponent } from './component/textField/textField.component';
 import { ImageUploadComponent } from './component/image-upload/image-upload.component';
 import { IconComponent } from './component/icon/icon.component';
 import { UserTypeBoxComponent } from './component/userTypeBox/userTypeBox.component';
+import { NativeScriptMaterialTextFieldModule } from "nativescript-material-textfield/angular";
 
 @NgModule({
   imports: [
     NativeScriptCommonModule,
     NativeScriptFormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NativeScriptMaterialTextFieldModule
   ],
   declarations: [ButtonComponent, TextFieldComponent, ImageUploadComponent, IconComponent, UserTypeBoxComponent],
   exports: [ButtonComponent, TextFieldComponent, ImageUploadComponent, IconComponent, UserTypeBoxComponent],
