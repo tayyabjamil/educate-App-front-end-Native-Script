@@ -16,7 +16,7 @@ import { HttpService } from '~/app/shared/http.service';
 export class OnBoardingFormComponent implements OnInit {
 
     onBoarding;
-    onBardingForm
+    onBoardingForm
     pageSide;
     boxSize;
     title;
@@ -27,10 +27,14 @@ export class OnBoardingFormComponent implements OnInit {
 
 
     constructor(
-        private page: Page, 
-        private formBuilder: FormBuilder, 
+        private page: Page,
+        private formBuilder: FormBuilder,
         private pageService: PageService,
         private httpSerivce: HttpService) {
+
+    }
+
+    onAccountSelection(user) {
 
     }
 
@@ -40,15 +44,20 @@ export class OnBoardingFormComponent implements OnInit {
         this.boxSize = deviceWidth * 0.35;
 
         this.pageSide = this.pageService.pageSidePadding();
-        this.onBardingForm = this.formBuilder.group({
-            Firstname: new FormControl("", [Validators.required, Validators.email]),
-            Lastname: new FormControl('', [Validators.required, Validators.minLength(5)]),
-            Adress: new FormControl('', [Validators.required]),
-            Contact: new FormControl('', [Validators.required]),
-            University: new FormControl('', [Validators.required]),
-            Department: new FormControl('', [Validators.required]),
-            Semester: new FormControl('', [Validators.required]),
+        this.onBoardingForm = this.formBuilder.group({
 
+            first_name: new FormControl("", [Validators.required]),
+            last_name: new FormControl("", [Validators.required]),
+            user_name: new FormControl("", [Validators.required]),
+            contact: new FormControl("", [Validators.required]),
+            email: new FormControl("", [Validators.required, Validators.email]),
+            password: new FormControl("", [Validators.required]),
+            confirmPassword: new FormControl("", [Validators.required]),
+            university: new FormControl("", [Validators.required]),
+            department: new FormControl("", [Validators.required]),
+            semester: new FormControl("", [Validators.required]),
+            adress: new FormControl("", [Validators.required]),
+            userType: new FormControl("", [Validators.required]),
         })
 
         this.onBoarding = [
@@ -58,10 +67,16 @@ export class OnBoardingFormComponent implements OnInit {
 
             },
             {
+                title: 'Professional Information',
+                key: 'professionalInfo'
+            },
+
+
+            {
                 title: 'Academics Information',
                 key: 'contactInfo'
             },
-          
+
         ];
 
     }
@@ -78,11 +93,11 @@ export class OnBoardingFormComponent implements OnInit {
     }
 
     onSubmit() {
-        // console.log(this.onBardingForm.value);
-        this.httpSerivce.createProfile().subscribe((result) => {
-            console.log(result+ 'this is sign up');
-        },(error) => {
-          console.log(error + 'form sign up');  
+        
+        this.httpSerivce.createProfile(this.onBoardingForm.value).subscribe((result) => {
+            console.log(result + 'this is sign up');
+        }, (error) => {
+            console.log(error + 'form sign up');
         });
     }
 
@@ -92,11 +107,15 @@ export class OnBoardingFormComponent implements OnInit {
                 return 'personalInfo'
             }
                 break;
+            case 'professionalInfo': {
+                return 'professionalInfo'
+            }
+                break;
             case 'contactInfo': {
                 return 'contactInfo'
             }
                 break;
-         
+
         }
     }
 

@@ -8,6 +8,7 @@ import { PageService } from './services/page.service';
 import { TextFieldComponent } from './component/textField/textField.component';
 import { ImageUploadComponent } from './component/image-upload/image-upload.component';
 import { IconComponent } from './component/icon/icon.component';
+import { UserTypeBoxComponent } from './component/userTypeBox/userTypeBox.component';
 
 @NgModule({
   imports: [
@@ -15,8 +16,8 @@ import { IconComponent } from './component/icon/icon.component';
     NativeScriptFormsModule,
     ReactiveFormsModule
   ],
-  declarations: [ButtonComponent, TextFieldComponent, ImageUploadComponent, IconComponent],
-  exports: [ButtonComponent, TextFieldComponent, ImageUploadComponent, IconComponent],
+  declarations: [ButtonComponent, TextFieldComponent, ImageUploadComponent, IconComponent, UserTypeBoxComponent],
+  exports: [ButtonComponent, TextFieldComponent, ImageUploadComponent, IconComponent, UserTypeBoxComponent],
   providers: [PageService]
 })
 export class ThemeModule { }

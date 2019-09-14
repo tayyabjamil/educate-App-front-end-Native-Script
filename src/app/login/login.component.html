@@ -1,73 +1,40 @@
 <ScrollView class="pagelightbg">
-  <GridLayout rows="auto,auto,auto,*" height="100%">
-    <GridLayout row="0" rows="auto,auto,auto" columns="*,*" colSpan="2">
+  <GridLayout>
+    <GridLayout rows="auto,auto,auto,auto,auto,auto,auto" height="100%">
 
-      <Label text="Choose Account Type" colSpan="2" [marginTop]="pageSide"
-        class=" text-center fontoswald primaryColor"></Label>
+      <Label text="Choose Account Type" [marginTop]="pageSide" class=" text-center fontoswald primaryColor"></Label>
 
-      <GridLayout row="1" colspan="2" columns="*,25,*" [marginTop]="pageSide ">
-        <GridLayout class="inactive-border " verticalAlignment="center" horizontalAlignment="right" [width]="boxSize"
-          [height]="boxSize">
-          <Image (tap)="onAccountSelection('student')" [ngClass]="{'selectedBorder' : (showType === 'student')}" row="0"
-            src="https://cdn2.iconfinder.com/data/icons/instagram-ui/48/jee-74-512.png">
-          </Image>
+      <ns-userTypeBox row="1" (onSelectUserType)="onAccountSelection($event)"></ns-userTypeBox>
 
-          <Label class="fas icon primaryColor" text="&#xf14a;" *ngIf="showType == 'student'" verticalAlignment="top"
-            horizontalAlignment="right"></Label>
-
-        </GridLayout>
-
-        <GridLayout col="2" class="inactive-border pageSide " verticalAlignment="center" horizontalAlignment="left"
-          [width]="boxSize" [height]="boxSize">
-          <Image (tap)="onAccountSelection('teacher')" [ngClass]="{'selectedBorder' : (showType === 'teacher')}" row="0"
-            src="https://cdn2.iconfinder.com/data/icons/instagram-ui/48/jee-74-512.png">
-          </Image>
-          <Label class="fas icon primaryColor" text="&#xf14a;" *ngIf="showType == 'teacher'" verticalAlignment="top"
-            horizontalAlignment="right"></Label>
-        </GridLayout>
-      </GridLayout>
-
-      <Label text="Student" row="2" col="0" class=" fontoswald primaryColor" horizontalAlignment="center"></Label>
-      <Label text="Teacher" row="2" col="1" class=" fontoswald primaryColor" horizontalAlignment="center"></Label>
-    </GridLayout>
-    <StackLayout row="2" colSpan="2" class="text-center">
-      <Label [text]="(showType === 'student') ? 'Lets Learn!': 'Lets Teach!'" style="font-size: 20%"
-        class="Oswaldbig mutedDark" [marginTop]="pageSide" [marginBottom]="pageSide"></Label>
-      <Label text="Please fill  out the form below to get started" class="primaryColor Roboto"></Label>
-    </StackLayout>
-
-    <GridLayout style="border-radius: 10%" [marginRight]="pageSide" [marginLeft]="pageSide" row="3" colSpan="2"
-      rows="auto,auto,auto">
-      <StackLayout row="0" colSpan="2" class="bgWhite borderradius" [marginTop]="pageSide">
-        <StackLayout orientation="horizontal">
-          <ns-icon icon="&#xf199;" row="0" col="1" class="primaryColor" horizontalAlignment="right"></ns-icon>
-          <ns-textField rtext="Email" row="0" col="0" [rformgroup]="rform" rcontrolname="email">
-          </ns-textField>
+      <!-- <Label text="Student" row="2" col="0" class=" fontoswald primaryColor" horizontalAlignment="center"></Label>
+      <Label text="Teacher" row="2" col="1" class=" fontoswald primaryColor" horizontalAlignment="center"></Label> -->
 
 
-        </StackLayout>
+      <Label row="2" [text]="(showType === 'student') ? 'Lets Learn!': 'Lets Teach!'" style="font-size: 20%"
+        class="Oswaldbig text-center mutedDark" [marginTop]="pageSide" [marginBottom]="pageSide"></Label>
+      <Label row="3" text="Please fill  out the form below to get started"
+        class="primaryColor text-center Roboto"></Label>
 
-        <StackLayout orientation="horizontal">
-          <ns-icon icon="&#xf13e;" row="1" col="0" class="primaryColor" horizontalAlignment="right"></ns-icon>
+      <StackLayout row="4" [marginRight]="pageSide" [marginLeft]="pageSide" rows="auto,auto,auto"
+        [paddingTop]="pageSide">
 
-          <ns-textField rtext="Password" row="1" col="1" [rformgroup]="rform" rcontrolname="password" secure="false">
-          </ns-textField>
+        <!-- <ns-icon icon="&#xf199;" row="0" col="1" class="primaryColor" horizontalAlignment="right"></ns-icon> -->
+        <ns-textField rtext="Email" row="0" col="0" [rformgroup]="rform" rcontrolname="email">
+        </ns-textField>
 
-        </StackLayout>
+        <!-- <ns-icon icon="&#xf13e;" row="1" col="1" class="primaryColor" horizontalAlignment="right"></ns-icon> -->
+        <ns-textField rtext="Password" row="1" col="1" [rformgroup]="rform" rcontrolname="password">
+        </ns-textField>
 
-        <!-- <StackLayout *ngIf="!isLoggingIn" row="2">
-          <ns-textField rtext="Confirm Password" class=" fas" [rformgroup]="rform" rcontrolname="confirmPassword"
-            secure="false">
-          </ns-textField>
-        </StackLayout> -->
       </StackLayout>
 
 
-      <StackLayout row="1" class="primarybg borderradius" [marginTop]="pageSide" [marginBottom]="pageSide">
+      <StackLayout row="5" class="primarybg borderradius" [marginRight]="pageSide" [marginLeft]="pageSide"
+        [marginTop]="pageSide" [marginBottom]="pageSide">
         <ns-button (onTap)="login()" text="Login"></ns-button>
       </StackLayout>
 
-      <Label row="2" verticalAlignment='center' (tap)="signup()" [marginBottom]="pageSide " [marginTop]="pageSide"
+      <Label row="6" verticalAlignment='center' (tap)="signup()" [marginBottom]="pageSide " [marginTop]="pageSide"
         [marginLeft]="pageSide/2" class="text-center">
         <FormattedString>
           <Span text="No account? Signup" class='primaryColor fontoswald '></Span>

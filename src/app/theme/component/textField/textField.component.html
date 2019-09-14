@@ -1,7 +1,5 @@
 <StackLayout [formGroup]="rformgroup">
 
- 
-
   <TextField [row]="row" [col]="col"  [formControlName]="rcontrolname" [hint]="rtext" [class]="class"
     [ngClass]="{ errorBorder :invalidControl}" ></TextField>
   <Label text="incomplete input " *ngIf="errorRequired" class="errorlbl"></Label>

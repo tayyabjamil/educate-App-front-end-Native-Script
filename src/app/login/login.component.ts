@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
   @ViewChild('scrollView', { static: true }) scrollView: ElementRef;
   @Output() public childEvent = new EventEmitter();
 
-  boxSize;
   userType;
   isLoggingIn: boolean = true;
   rform: FormGroup
@@ -33,7 +32,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
     this.page.actionBarHidden = true;
-    this.boxSize = deviceWidth * 0.35;
 
     this.pageSide = this.pageService.pageSidePadding();
 
@@ -44,17 +42,12 @@ export class LoginComponent implements OnInit {
     });
   }
 
-
-
   onAccountSelection(user) {
-    if (this.rform.controls['userType']) {
-      this.rform.controls['userType'].setValue(user);
+    if (user) {
+      if (this.rform.controls['userType']) {
+        this.rform.controls['userType'].setValue(user);
+      }
     }
-    this.userType = user;
-  }
-
-  get showType() {
-    return this.userType;
   }
 
   login() {
@@ -66,11 +59,12 @@ export class LoginComponent implements OnInit {
           this.isBusy = false;
           if ((<any>result).length !== 0) {
             this.authService.setLoggedIn();
-            this.routerExtensions.navigate(['home'])
+            this.routerExtensions.navigate(['home']);
           } else {
             alert('username & email not found');
           }
         }, (error) => {
+          this.isBusy = false;
           console.log(error)
         })
       }
