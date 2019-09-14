@@ -5,6 +5,7 @@ import { PageService } from '~/app/theme/services/page.service';
 import { DataService } from '~/app/data.service';
 import { RouterExtensions } from 'nativescript-angular/router';
 import { AuthService } from '~/app/shared/auth.service';
+import { HttpService } from '~/app/shared/http.service';
 
 @Component({
   selector: 'ns-profile',
@@ -18,8 +19,13 @@ export class ProfileComponent implements OnInit {
   itemPadding: number;
   pageSide;
   profileData;
+  profile;
 
-  constructor(private _page: Page, private pageService: PageService, private dataService: DataService,
+  constructor(
+   private httpService:HttpService,
+    private _page: Page, 
+    private pageService: PageService, 
+    private dataService: DataService,
     private routerExtensions: RouterExtensions,
     private authService: AuthService) { }
 
@@ -31,9 +37,19 @@ export class ProfileComponent implements OnInit {
 
     this.pageSide = this.pageService.pageSidePadding();
     this._page.actionBarHidden = true;
-    this.profileData = this.dataService.profileData;
+    //this.profileData = this.dataService.profileData;
+    this.getUserProfile();
   }
 
+  getUserProfile() {
+    this.httpService.getUserProfile()
+    .subscribe(res => {
+      this.profile = res[0];
+      console.log(res);
+    }, (error) => {
+      console.log(error);
+    });
+  }
   logout() {
     this.authService.removeLoggedIn();
     this.routerExtensions.navigate(['login'], {

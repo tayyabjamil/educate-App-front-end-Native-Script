@@ -8,7 +8,7 @@ import { NewqueryComponent } from '../hometeacher/Newquery/Newquery.component';
 })
 export class HttpService {
 
-  private serverUrl = "https://50c7fe7c.ngrok.io";
+  private serverUrl = "https://e152d9bb.ngrok.io";
 
   constructor(private http: HttpClient,
     private authService: AuthService) { }
@@ -16,6 +16,11 @@ export class HttpService {
   getUserQueries() {
     let headers = this.createRequestHeader();
     return this.http.get(this.serverUrl + '/api/getUserQueries?id='+ this.authService.getUser(), { headers: headers });
+  }
+
+  getUserProfile() {
+    let headers = this.createRequestHeader();
+    return this.http.post(this.serverUrl + '/api/getUserProfile?id='+ this.authService.getUser(), { headers: headers });
   }
 
   createQueries(newQuery) {
