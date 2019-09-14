@@ -25,14 +25,13 @@
       </ng-template>
       <ng-template pagerTemplateKey="professionalInfo" let-i="index" let-item="item">
         <GridLayout class="pager-item" columns="*">
-          <!-- 
-             <GridLayout    [marginRight]="pageSide" [marginLeft]="pageSide">
+          <!-- <GridLayout    [marginRight]="pageSide" [marginLeft]="pageSide">
               <ns-image-upload></ns-image-upload>
-            </GridLayout> -->
+            </GridLayout>
+           -->
 
           <StackLayout class=" bgWhite" style="padding: 5%" [marginRight]="pageSide" [marginLeft]="pageSide"
             [marginTop]="boxSize">
-
             <ns-textField rtext="email" [rformgroup]="onBoardingForm" rcontrolname="email">
             </ns-textField>
             <ns-textField rtext="password" [rformgroup]="onBoardingForm" rcontrolname="password">
