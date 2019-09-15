@@ -1,4 +1,4 @@
-<GridLayout row="1" colspan="2" columns="*,25,*" [marginTop]="pageSide ">
+<GridLayout row="1" colspan="2" rows="*,auto" columns="*,25,*" [marginTop]="pageSide ">
   <GridLayout class="inactive-border " verticalAlignment="center" horizontalAlignment="right" [width]="boxSize"
     [height]="boxSize">
     <Image (tap)="onAccountSelection('student')" [ngClass]="{'selectedBorder' : (showType === 'student')}" row="0"
@@ -17,4 +17,7 @@
     <Label class="fas icon primaryColor" text="&#xf14a;" *ngIf="showType == 'teacher'" verticalAlignment="top"
       horizontalAlignment="right"></Label>
   </GridLayout>
+  <Label text="Student" row="1" col="0" class=" fontoswald primaryColor" horizontalAlignment="center"></Label> -->
+  <Label text="Teacher" row="1" col="2" class=" fontoswald primaryColor" horizontalAlignment="center"></Label> -->
+
 </GridLayout>

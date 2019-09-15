@@ -10,6 +10,7 @@ import { QueriesComponent } from './Queries/Queries.component';
 import { NewqueryComponent } from './Newquery/Newquery.component';
 import { ThemeModule } from '../theme/theme.module';
 import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
+import { PeopleQueriesComponent } from './peopleQueries/peopleQueries.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
     MessagesComponent,
     ProfileComponent,
     QueriesComponent,
-    NewqueryComponent
+    NewqueryComponent,
+    PeopleQueriesComponent
   ]
 })
 export class HomeModule { }

@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     this.pageSide = this.pageService.pageSidePadding();
 
     this.rform = this.formBuilder.group({
-      email: new FormControl("test1@gmail.com", [Validators.required, Validators.email]),
+      email: new FormControl("Tayyabjamil@gmail.com", [Validators.required, Validators.email]),
       password: new FormControl('password', [Validators.required, Validators.minLength(5)]),
       userType: new FormControl('', Validators.required),
     });

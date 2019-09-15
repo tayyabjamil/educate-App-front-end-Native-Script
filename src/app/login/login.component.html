@@ -6,9 +6,7 @@
 
       <ns-userTypeBox row="1" (onSelectUserType)="onAccountSelection($event)"></ns-userTypeBox>
 
-      <!-- <Label text="Student" row="2" col="0" class=" fontoswald primaryColor" horizontalAlignment="center"></Label>
-      <Label text="Teacher" row="2" col="1" class=" fontoswald primaryColor" horizontalAlignment="center"></Label> -->
-
+     
 
       <Label row="2" [text]="(showType === 'student') ? 'Lets Learn!': 'Lets Teach!'" style="font-size: 20%"
         class="Oswaldbig text-center mutedDark" [marginTop]="pageSide" [marginBottom]="pageSide"></Label>

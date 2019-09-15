@@ -10,6 +10,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { QueriesComponent } from "./Queries/Queries.component";
 import { NewqueryComponent } from "./Newquery/Newquery.component";
 import { LoginComponent } from "../login/login.component";
+import { PeopleQueriesComponent } from "./peopleQueries/peopleQueries.component";
 
 export const routes: Routes = [
     {
@@ -20,7 +21,8 @@ export const routes: Routes = [
             { path: "", component: ProfileComponent },
             { path: "inbox", component: MessagesComponent },
             { path: "newquery", component: NewqueryComponent },
-            { path: "queries", component: QueriesComponent},
+            { path: "myQueries", component: QueriesComponent},
+            { path: "peopleQueries", component: PeopleQueriesComponent},
             
         ]
     },
