@@ -8,7 +8,7 @@
     <Label class="fas icon primaryColor" text="&#xf14a;" *ngIf="showType == 'student'" verticalAlignment="top"
       horizontalAlignment="right"></Label>
   </GridLayout>
-
+  
   <GridLayout col="2" class="inactive-border pageSide " verticalAlignment="center" horizontalAlignment="left"
     [width]="boxSize" [height]="boxSize">
     <Image (tap)="onAccountSelection('teacher')" [ngClass]="{'selectedBorder' : (showType === 'teacher')}" row="0"

@@ -14,7 +14,6 @@ export class UserTypeBoxComponent implements OnInit {
   pageSide;
 
   @Output() onSelectUserType = new EventEmitter<any>();
-
   constructor(private pageService: PageService) { }
 
   ngOnInit() {

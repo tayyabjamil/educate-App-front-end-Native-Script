@@ -15,7 +15,8 @@ export class QueriesComponent implements OnInit {
 
   queries;
   pageSide;
-previewSize;
+  iconSize;
+
   constructor(
     private httpService: HttpService,
     private routerExtensions:RouterExtensions) {
@@ -25,10 +26,11 @@ previewSize;
     const deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
     const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
     this.pageSide = deviceWidth * 0.10;
-    this.previewSize= deviceWidth * 0.10;
+    this.iconSize= deviceWidth * 0.095;
     // this.queries = this.service.queries;
     this.getUserQueries();
   }
+
   public bidinglist(){
     this.routerExtensions.navigate(['home/biddinglist']);
   }

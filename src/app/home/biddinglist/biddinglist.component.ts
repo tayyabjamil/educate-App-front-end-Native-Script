@@ -14,6 +14,7 @@ export class BiddinglistComponent implements OnInit {
 queries;
 pageSide;
 previewSize;
+iconSize;
   constructor(
     private httpService:HttpService,
     private routerExtensions:RouterExtensions,
@@ -24,6 +25,7 @@ previewSize;
     const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
     this.pageSide = deviceWidth * 0.10;
     this.previewSize = deviceWidth * 0.20;
+    this.iconSize= deviceWidth * 0.095;
     this.getUserQueries();
   }
  
