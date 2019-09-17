@@ -7,8 +7,7 @@ import { ProfileComponent } from "./profile/profile.component";
 import { MessagesComponent } from "./messages/messages.component";
 
 import { QueriesComponent } from "./Queries/Queries.component";
-import { NewqueryComponent } from "./Newquery/Newquery.component";
-import { RatingsComponent } from "./Ratings/Ratings.component";
+import { CoursesComponent } from "./courses/courses.component";
 
 export const routes: Routes = [
     {
@@ -16,10 +15,8 @@ export const routes: Routes = [
         children: [
             {path:"profile",component:ProfileComponent},
             { path: "inbox", component: MessagesComponent },
-            { path:"ratings", component: RatingsComponent},
             { path: "queries", component: QueriesComponent },
-            { path: "newquery", component: NewqueryComponent },
-
+            { path:"courses",component:CoursesComponent}
         ]
     },
 ];

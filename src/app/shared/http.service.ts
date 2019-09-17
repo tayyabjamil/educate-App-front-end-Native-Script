@@ -8,7 +8,7 @@ import { NewqueryComponent } from '../hometeacher/Newquery/Newquery.component';
 })
 export class HttpService {
 
-  private serverUrl = "https://9a49b086.ngrok.io";
+  private serverUrl = "https://cc11ec8e.ngrok.io";
 
   constructor(private http: HttpClient,
     private authService: AuthService) { }

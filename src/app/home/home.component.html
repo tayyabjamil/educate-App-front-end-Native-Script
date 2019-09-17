@@ -3,21 +3,16 @@
   <Label row="1" class="gradientline"></Label>
   <GridLayout row="2" columns="auto,auto,auto,auto,auto" rows="*,*" class="pagebg">
 
-    <!-- <ns-icon icon="&#xf2bd;" row="0" col="0" (tap)="onviewSelection('profile')"
+    <ns-icon icon="&#xf2bd;" row="0" col="0" (tap)="onviewSelection('profile')"
       [ngClass]="{primaryColor : (showType === 'profile')}"></ns-icon>
-
     <ns-icon icon="&#xf059;" row="0" col="1" (tap)="onviewSelection('Queries')"
       [ngClass]="{primaryColor : (showType === 'Queries')}"></ns-icon>
-
     <ns-icon icon="&#xf02d;" row="0" col="2" (tap)="onviewSelection('Inbox')"
       [ngClass]="{primaryColor : (showType === 'Inbox')}"></ns-icon>
-
     <ns-icon icon="&#xf02d;" row="0" col="3" (tap)="onviewSelection('courses')"
       [ngClass]="{primaryColor : (showType === 'courses')}"></ns-icon>
-
     <ns-icon icon="&#xf02d;" row="0" col="4" (tap)="onviewSelection('courses')"
-      [ngClass]="{primaryColor : (showType === 'courses')}"></ns-icon> -->
-
+      [ngClass]="{primaryColor : (showType === 'courses')}"></ns-icon>
     <Label text="Profile" padding="10" [ngClass]="{primaryColor : (showType === 'profile')}" col="0" row="1"
       [nsRouterLink]="['/home']" horizontalAlignment="center"></Label>
 

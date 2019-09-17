@@ -11,18 +11,19 @@ import { QueriesComponent } from "./Queries/Queries.component";
 import { NewqueryComponent } from "./Newquery/Newquery.component";
 import { LoginComponent } from "../login/login.component";
 import { PeopleQueriesComponent } from "./peopleQueries/peopleQueries.component";
+import { BiddinglistComponent } from "./biddinglist/biddinglist.component";
 
 export const routes: Routes = [
     {
         path: "", component: HomeComponent,
         children: [
-            // { path: "", component: DashboardComponent },
            
-            { path: "", component: ProfileComponent },
+            { path: "", component: QueriesComponent },
             { path: "inbox", component: MessagesComponent },
             { path: "newquery", component: NewqueryComponent },
             { path: "myQueries", component: QueriesComponent},
             { path: "peopleQueries", component: PeopleQueriesComponent},
+            { path: "biddinglist",component:BiddinglistComponent}
             
         ]
     },

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as platformModule from 'tns-core-modules/platform';
 import { DataService } from '~/app/data.service';
 import { HttpService } from '~/app/shared/http.service';
+;
 
 @Component({
   selector: 'ns-peopleQueries',
@@ -12,7 +13,8 @@ export class PeopleQueriesComponent implements OnInit {
 queries;
 pageSide;
   constructor(
-    private httpService:HttpService
+    private httpService:HttpService,
+    
     ) { }
 
   ngOnInit() {
@@ -22,6 +24,7 @@ pageSide;
    
     this.getPeopleQueries();
   }
+
   getPeopleQueries() {
     this.httpService.getPeopleQueries()
     .subscribe(res => {

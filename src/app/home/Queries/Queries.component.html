@@ -4,22 +4,42 @@
     <Label col="0" text="Queries" style="font-size: 20%" class="fontoswald"></Label>
   </GridLayout>
 </ActionBar>
+<ScrollView>
+    
 <GridLayout rows="*" columns="" class="pagelightbg" [marginTop]="pageSide/2">
   <ListView row="0" [items]="queries" separatorColor="transparent">
     <ng-template let-queries="item">
       <GridLayout>
 
-        <GridLayout row="0" rows="auto,auto,auto,auto" columns="auto,*,auto" [marginBottom]="pageSide/4" [marginLeft]="pageSide/2"
+        <GridLayout row="0" (tap)="bidinglist()" rows="auto,auto,auto,auto" columns="*,auto" 
+        [marginBottom]="pageSide/4" [marginLeft]="pageSide/2"
           [marginRight]="pageSide/2" class="bgWhite">
-          <Label class="Roboto" col="0" row="0" [text]="queries.title" [marginLeft]="pageSide/2"></Label>
-          <Label class="Roboto" col="0" row="1" [text]="queries.description" [marginLeft]="pageSide/2"></Label>
-          <Label class="Roboto" col="0" row="2" [text]="queries.estimateAmount" [marginLeft]="pageSide/2"></Label>
-          <Label class="Roboto" col="0" row="3" [text]="queries.adress" [marginLeft]="pageSide/2"></Label>
-          <ns-icon icon="&#xf0a9;" row="2" col="2" class="primaryColor"> </ns-icon>
-        </GridLayout>
+          <Label class="Roboto" col="0" row="0" [text]="queries.title" class="fontbig mutedDark" [marginLeft]="pageSide/2"></Label>
+          <Label class="Roboto" col="0" row="1" [text]="queries.type" class="fontmedium mutedDark" [marginLeft]="pageSide/2"></Label>
+          <GridLayout row="2" rows="*" columns="auto,auto" [marginLeft]="pageSide/2" [marginRight]="pageSide/2"  orientation="horizontal">
+    <StackLayout col="0" orientation="horizontal">
+        <ns-icon col="0" icon="&#xf783;"  class="primaryColor"> </ns-icon>              
+        <Label col="1" class="Roboto" verticalAlignment="center" text="7/3/2019" [marginLeft]="pageSide/2"></Label>
+ 
+    </StackLayout>
+    <StackLayout col="1" orientation="horizontal" [marginLeft]="pageSide/2">
+    <ns-icon  col="2" icon="&#xf155;"  class="primaryColor" [marginLeft]="pageSide" > </ns-icon>
+    <Label  col="3" class="Roboto" verticalAlignment="center" [text]="queries.estimateAmount" [marginLeft]="pageSide/2"></Label>            
+
+    </StackLayout>
+          </GridLayout>
+         <!-- <StackLayout orientation="horizontal" row="4" style="background-color: lightcoral" [height]="previewSize">
+            <Label class="Roboto" col="0"  [text]="queries.description" [marginLeft]="pageSide/2"></Label>    
+         </StackLayout> -->
+           <!-- <Label class="Roboto"  row="4" [text]="queries.adress" horizontalAlignment="right" ></Label> -->
+           <ns-icon col="1" colSpan="2" row="2" icon="&#xf234;"  class="primaryColor"> </ns-icon>
+     
+          </GridLayout>
       </GridLayout>
     </ng-template>
   </ListView>
   <Label text="&#xf14b;" [nsRouterLink]="['/home/newquery']" style="font-size: 50%" class="fas mutedDark"
     [marginTop]="pageSide*11" [marginBottom]="pageSide/4" [marginLeft]="pageSide*8" [marginRight]="pageSide/2"></Label>
 </GridLayout>
+
+</ScrollView>

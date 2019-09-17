@@ -1,8 +1,9 @@
 <ScrollView class="pagelightbg ">
     <GridLayout rows="auto,auto,auto,auto,auto,auto" class="p-b-100" columns="*">
-        <Image [height]="previewSize" stretch="aspectFill" class="b-r-100 borderW5 borderColor" [width]="previewSize"
-            [marginTop]="previewSize/3" [src]="profile?.imgUrl">
-        </Image>
+            <Image [height]="previewSize" style="  border-radius: 40%" [marginTop]="pageSide/2" [width]="previewSize"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqkTkxvlVSXCW0Avw0qipbUSd7CFnjPZ_PdEson-QeJk1WSbv8rg"
+            class="thumb img-circle"></Image>
+
         <Label [text]="profile?.username" row="1"
             class="f-22 text-center capitalize  mutedDark f-bold m-l-30 m-t-5 m-r-30 Roboto" textWrap="true"></Label>
         <GridLayout rows="auto,auto" row="2" [marginTop]="previewSize/4" [marginLeft]="pageSide"

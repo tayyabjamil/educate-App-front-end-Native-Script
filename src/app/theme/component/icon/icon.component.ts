@@ -11,6 +11,7 @@ export class IconComponent implements OnInit {
   @Input() row = 0;
   @Input() class ='';
 
+  @Input() colspan =0;
 
   @Input() col = 0;
   @Input() icon  = ''; //'#&x342;';

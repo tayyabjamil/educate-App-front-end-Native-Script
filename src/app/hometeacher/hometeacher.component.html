@@ -2,10 +2,10 @@
   <page-router-outlet ></page-router-outlet>
   <Label row="1" class="gradientline"></Label>
   <GridLayout row="2" columns="*,*,*,*" rows="*,*" class="pagebg">
-    <Label row="0" col="0" class="fas" style="font-size: 25% ;padding-top: 10%" (tap)="onviewSelection('profile')"
-      [ngClass]="{primaryColor : (showType === 'profile')}" horizontalAlignment="center" text="&#xf2bd;"></Label>
-    <Label row="0" col="1" class="fas" style="font-size: 25%;padding-top: 10%" (tap)="onviewSelection('Quries')"
-      [ngClass]="{primaryColor : (showType === 'Quries')}" horizontalAlignment="center" text="&#xf059;"></Label>
+    <Label row="0" col="0" class="fas" style="font-size: 25% ;padding-top: 10%" (tap)="onviewSelection('Profile')"
+      [ngClass]="{primaryColor : (showType === 'Profile')}" horizontalAlignment="center" text="&#xf2bd;"></Label>
+    <Label row="0" col="1" class="fas" style="font-size: 25%;padding-top: 10%" (tap)="onviewSelection('Queries')"
+      [ngClass]="{primaryColor : (showType === 'Queries')}" horizontalAlignment="center" text="&#xf059;"></Label>
     <Label row="0" col="2" class="fas" style="font-size: 25%;padding-top: 10%" (tap)="onviewSelection('Inbox')"
       [ngClass]="{primaryColor : (showType === 'Inbox')}" horizontalAlignment="center" text="&#xf086;"></Label>
     <Label row="0" col="3" class="fas" style="font-size: 25%;padding-top: 10%" (tap)="onviewSelection('Courses')"
@@ -13,11 +13,11 @@
 
     <Label text="Profile" (tap)="onviewSelection('profile')" [ngClass]="{primaryColor : (showType === 'profile')}"
       col="0" row="1" [nsRouterLink]="['/hometeacher/profile']" horizontalAlignment="center"></Label>
-    <Label text="Quries" (tap)="onviewSelection('Quries')" [ngClass]="{primaryColor : (showType === 'Quries')}" col="1"
+    <Label text="Queries" (tap)="onviewSelection('Queries')" [ngClass]="{primaryColor : (showType === 'Quries')}" col="1"
       row="1" [nsRouterLink]="['/hometeacher/queries']" horizontalAlignment="center"></Label>
     <Label text="Inbox" (tap)="onviewSelection('Inbox')" [ngClass]="{primaryColor : (showType === 'Inbox')}"
       col="2" row="1" [nsRouterLink]="['/hometeacher/inbox']" horizontalAlignment="center"></Label>
     <Label text="Ratings" (tap)="onviewSelection('Courses')" [ngClass]="{primaryColor : (showType === 'Courses')}"
-      col="3" row="1" [nsRouterLink]="['/hometeacher/ratings']" horizontalAlignment="center"></Label>
+      col="3" row="1" [nsRouterLink]="['/hometeacher/courses']" horizontalAlignment="center"></Label>
   </GridLayout>
 </GridLayout>
