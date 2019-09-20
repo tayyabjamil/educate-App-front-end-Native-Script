@@ -10,7 +10,7 @@
 }
 
 .bgWhite {
-    background-color: rgb(245, 240, 240);
+    background-color: whitesmoke
 }
 .primaryColor {
     color: $primary-color;
@@ -21,6 +21,9 @@
 }
 
 
+.p-b-150 {
+    padding-bottom: 150px;
+}
 
 .mutedDarkbg {
 background-color: $secondary-color;    
@@ -56,8 +59,8 @@ background-color: $secondary-color;
     font-weight: 500;
 }
 
-.font-w-600 {
-    font-weight: 600;
+.font-w-700 {
+    font-weight: 700;
 }
 
 .font-w-900 {

@@ -12,6 +12,7 @@ import { HttpService } from '~/app/shared/http.service';
 export class PeopleQueriesComponent implements OnInit {
 queries;
 pageSide;
+iconSize;
   constructor(
     private httpService:HttpService,
     
@@ -21,7 +22,8 @@ pageSide;
     const deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
     const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
     this.pageSide = deviceWidth * 0.10;
-   
+    this.iconSize = deviceWidth * 0.095;
+    
     this.getPeopleQueries();
   }
 

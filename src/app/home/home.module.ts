@@ -12,13 +12,15 @@ import { ThemeModule } from '../theme/theme.module';
 import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
 import { PeopleQueriesComponent } from './peopleQueries/peopleQueries.component';
 import { BiddinglistComponent } from './biddinglist/biddinglist.component';
+import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 
 @NgModule({
   imports: [
     NativeScriptCommonModule,
     HomeRoutingModule,
     ThemeModule,
-    NativeScriptHttpClientModule
+    NativeScriptHttpClientModule,
+    NativeScriptUIListViewModule
   ],
   declarations: [
     HomeComponent,

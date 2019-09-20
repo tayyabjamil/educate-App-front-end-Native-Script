@@ -10,9 +10,13 @@ export class AuthService {
 
   setLoggedIn(user) {
     setNumber('userId', user[0].id);
+    setString('userType', user[0].userType);
     setBoolean('userLoggedIn', true);
   }
 
+  getUserType() {
+    return getString('userType');
+  }
   removeLoggedIn() {
     clear();
   }

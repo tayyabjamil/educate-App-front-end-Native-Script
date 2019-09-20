@@ -13,34 +13,32 @@
                 <GridLayout columns="auto,*,auto" [marginLeft]="pageSide" [marginRight]="pageSide" rows="auto,auto"
                     class="b-b-1" [paddingTop]="itemPadding" [paddingBottom]="itemPadding"
                     [paddingLeft]="itemPadding / 2" [paddingRight]="itemPadding / 2">
-                    <ns-icon col="0" class="fas primaryColor" icon="&#xf0e0;"></ns-icon>
-                    <Label col="1" text="Email" style="padding-top: 10%" class="mutedDark "></Label>
-                    <ns-icon col="2" icon="&#xf044;" class="fas primaryColor"></ns-icon>
+                    <Image col="0" src="~/assets/images/mail.png"  stretch="aspectFit" [marginTop]="iconSize/8"
+                    [marginBottom]="iconSize/8" [width]="iconSize" [height]="iconSize"></Image>
+                    <Label col="1" [marginLeft]="pageSide" text="Email" style="padding-top: 10%" class="mutedDark "></Label>
                     <Label col="0" colSpan="2" row="1" [text]="profile?.email" class="mutedDark Roboto"></Label>
                 </GridLayout>
                 <GridLayout columns="auto,*,auto" [marginLeft]="pageSide" [marginRight]="pageSide" rows="auto,auto"
                     class="b-b-1" [paddingTop]="itemPadding" [paddingBottom]="itemPadding"
                     [paddingLeft]="itemPadding / 2" [paddingRight]="itemPadding / 2">
-                    <ns-icon col="0" class="fas primaryColor" icon="&#xf87b;"></ns-icon>
-                    <Label col="1" text="Contact" style="padding-top: 10%" class="mutedDark "></Label>
-                    <ns-icon col="2" icon="&#xf044;" class="fas primaryColor"></ns-icon>
+                     <Image col="0"  src="~/assets/images/phone.png" stretch="aspectFit" [marginTop]="iconSize/8"
+                [marginBottom]="iconSize/8" [width]="iconSize" [height]="iconSize"></Image>
+            <Label col="1" [marginLeft]="pageSide" text="Contact" style="padding-top: 10%" class="mutedDark "></Label> -->
                     <Label col="0" colSpan="2" row="1" [text]="profile?.contact" class="mutedDark Roboto"></Label>
                 </GridLayout>
                 <GridLayout columns="auto,*,auto" [marginLeft]="pageSide" [marginRight]="pageSide" rows="auto,auto"
                     class="b-b-1" [paddingTop]="itemPadding" [paddingBottom]="itemPadding"
                     [paddingLeft]="itemPadding / 2" [paddingRight]="itemPadding / 2">
-                    <ns-icon col="0" class="fas primaryColor" icon="&#xf3c5;"></ns-icon>
-                    <Label col="1" text="Address" style="padding-top: 10%" class="mutedDark "></Label>
-                    <ns-icon col="2" icon="&#xf044;" class="fas primaryColor"></ns-icon>
+                    <Image col="0" src="~/assets/images/house.png" class="b-r-100" stretch="aspectFit" [marginTop]="iconSize/8"
+                    [marginBottom]="iconSize/8" [width]="iconSize" [height]="iconSize"></Image> -->
+                     <Label col="1" [marginLeft]="pageSide" text="Address" style="padding-top: 10%" class="mutedDark "></Label> 
                     <Label col="0" colSpan="2" row="1" [text]="profile?.adress" class="mutedDark Roboto"></Label>
                 </GridLayout>
             </StackLayout>
         </GridLayout>
-
         <GridLayout rows="auto,auto" row="3" [marginTop]="previewSize/4" [marginLeft]="pageSide"
             [marginRight]="pageSide">
             <Label text="ACADMICS" class="f-12 mutedDark m-l-10 p-b-10" textWrap="true"></Label>
-
             <StackLayout row="1" class="bgWhite boxBorder">
                 <GridLayout columns="auto,*,auto" [marginLeft]="pageSide" [marginRight]="pageSide" rows="auto,auto"
                     class="b-b-1" [paddingTop]="itemPadding" [paddingBottom]="itemPadding"
@@ -68,9 +66,7 @@
 
                 </GridLayout>
                 <Label text="Logout" (tap)="logout()" padding="20" color="red" textWrap="true"></Label>
-
             </StackLayout>
         </GridLayout>
-
     </GridLayout>
 </ScrollView>

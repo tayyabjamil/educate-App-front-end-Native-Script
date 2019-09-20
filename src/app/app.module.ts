@@ -15,6 +15,7 @@ import { DataService } from "./data.service";
 import { HttpService } from "./shared/http.service";
 import { AuthService } from "./shared/auth.service";
 import { AuthGuardService } from "./shared/authGuard.service";
+import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 
 @NgModule({
    bootstrap: [
@@ -25,7 +26,8 @@ import { AuthGuardService } from "./shared/authGuard.service";
       AppRoutingModule,
       ThemeModule,
       LoginModule,
-      NativeScriptHttpClientModule
+      NativeScriptHttpClientModule,
+      NativeScriptUIListViewModule
    ],
    declarations: [
       AppComponent,

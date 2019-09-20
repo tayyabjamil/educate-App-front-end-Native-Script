@@ -17,14 +17,12 @@ export const routes: Routes = [
     {
         path: "", component: HomeComponent,
         children: [
-           
-            { path: "", component: QueriesComponent },
-            { path: "inbox", component: MessagesComponent },
             { path: "newquery", component: NewqueryComponent },
-            { path: "myQueries", component: QueriesComponent},
-            { path: "peopleQueries", component: PeopleQueriesComponent},
-            { path: "biddinglist",component:BiddinglistComponent}
-            
+            { path: "inbox", component: MessagesComponent },
+            { path: "biddinglist",component:BiddinglistComponent},
+            { path: "courses",component: CoursesComponent},
+            { path: "profile", component: ProfileComponent },
+            { path: "", component: QueriesComponent},
         ]
     },
 ];

@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
   pageSide;
   profileData;
   profile;
-
+iconSize;
   constructor(
    private httpService:HttpService,
     private _page: Page, 
@@ -34,13 +34,13 @@ export class ProfileComponent implements OnInit {
     const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
     this.previewSize = deviceWidth * 0.25;
     this.itemPadding = deviceWidth * 0.04;
-
+    this.iconSize = deviceWidth * 0.095;
+   
     this.pageSide = this.pageService.pageSidePadding();
     this._page.actionBarHidden = true;
     //this.profileData = this.dataService.profileData;
     this.getUserProfile();
   }
-
   getUserProfile() {
     this.httpService.getUserProfile()
     .subscribe(res => {
