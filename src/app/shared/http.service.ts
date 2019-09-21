@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from './auth.service';
-import { NewqueryComponent } from '../hometeacher/Newquery/Newquery.component';
 
 @Injectable({
   providedIn: 'root'

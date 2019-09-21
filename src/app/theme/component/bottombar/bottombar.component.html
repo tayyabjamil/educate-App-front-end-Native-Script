@@ -17,7 +17,7 @@
 
     <StackLayout row="0" col="0">
         <Label text="My Feed" padding="10"  col="1" row="1"
-        (tap)="onNavigate('home')" horizontalAlignment="center"></Label>
+        (tap)="onNavigate('home/myfeed')" horizontalAlignment="center"></Label>
     </StackLayout>
 
     <StackLayout row="0" col="1">
@@ -38,7 +38,7 @@
   <GridLayout row="2" *ngIf="userType === 'teacher'" columns="*,*,*,*" rows="auto" class="pagebg">
       <StackLayout row="0" col="0">
           <Label text="Queries" padding="10"  col="1" row="1"
-          (tap)="onNavigate('home')"horizontalAlignment="center"></Label>
+          (tap)="onNavigate('home/queries')"horizontalAlignment="center"></Label>
       </StackLayout>
   
       <StackLayout row="0" col="1">
